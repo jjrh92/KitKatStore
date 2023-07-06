@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@mui/material";
 import { ColoresJulioFood } from "../../../Colores";
 import "../Categoria/Categoria.css";
-// import "../../../Hover.css"
+
 
 const Categoria = (props) => {
         

@@ -5,7 +5,6 @@ import RutaLogo from "../../assets/logo.png";
 import Categoria from "./Categoria/Categoria";
 import CartWidget from "../Cart/CartWidget";
 import { ColoresJulioFood } from "../../Colores";
-// import "../../Hover.css"
 
 const Logo = styled ("img") ({
 

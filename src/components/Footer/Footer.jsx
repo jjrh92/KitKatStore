@@ -1,12 +1,11 @@
 import React from "react";
 import { styled } from '@mui/system';
-import { Link, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { ColoresJulioFood } from "../../Colores";
 import "./Footer.css";
-// import '../../Hover.css'
 
 const ContenedorFooter = styled ("footer") ({
 
