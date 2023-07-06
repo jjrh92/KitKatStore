@@ -4,7 +4,6 @@ import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartChe
 import { ColoresJulioFood } from "../../Colores";
 import { styled } from '@mui/system';
 import "../Cart/CartWidget.css";
-import '../../Hover.css'
 
 const TextoCantidad = styled ("span") ({
 
