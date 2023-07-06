@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { ColoresJulioFood } from "../../Colores";
 import "./Footer.css";
-import '../../Hover.css'
+// import '../../Hover.css'
 
 const ContenedorFooter = styled ("footer") ({
 
