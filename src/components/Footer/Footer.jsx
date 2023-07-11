@@ -13,6 +13,7 @@ const ContenedorFooter = styled ("footer") ({
     display: "flex",
     flexDirection: "column",
     borderTop: "0.125rem solid",
+    borderBottom: "0.125rem solid",
     borderColor: ColoresJulioFood.textos,
 
 });
@@ -20,9 +21,12 @@ const ContenedorFooter = styled ("footer") ({
 const TextoFooter = styled ("span") ({
 
     fontWeight: "bold",
-    fontSize: "30px",
+    fontSize: "24px",
     textAlign: "center",
     color: ColoresJulioFood.textos,
+    userSelect: "none",
+    fontFamily: "KittyKatt",
+    paddingBottom: "1rem",
 
 });
 
@@ -42,22 +46,22 @@ const Footer = () => {
         <ContenedorFooter>
 
              <TextoFooter>
-                Proyecto Académico
+                Proyecto sin fines de lucro.
             </TextoFooter>
 
             <TextoFooter>
-                Comisión 43305 ReactJS Coderhouse
+                43305 ReactJS - Coderhouse - 2023.
             </TextoFooter>
 
             <ContenedorBotones>
-                <Button className="hvr-pop" variant="text" title="Contáctame por LinkedIn" href="https://www.linkedin.com/in/jjrh92/" target="_blank" rel="noopener noreferrer">
-                    <LinkedInIcon sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
+                <Button draggable="false" className="boton" variant="text" title="Contáctame por LinkedIn" href="https://www.linkedin.com/in/jjrh92/" target="_blank" rel="noopener noreferrer">
+                    <LinkedInIcon className="boton" sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
                 </Button>
-                <Button className="hvr-pop" variant="text" title="Sígueme en Github" href="https://www.github.com/jjrh92" target="_blank" rel="noopener noreferrer">
-                    <GitHubIcon sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
+                <Button draggable="false" className="boton" variant="text" title="Sígueme en Github" href="https://www.github.com/jjrh92" target="_blank" rel="noopener noreferrer">
+                    <GitHubIcon className="boton" sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
                 </Button>
-                <Button className="hvr-pop" variant="text" title="Contáctame por Telegram" href="https://t.me/jjrh92" target="_blank" rel="noopener noreferrer">
-                    <TelegramIcon sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
+                <Button draggable="false" variant="text" title="Contáctame por Telegram" href="https://t.me/jjrh92" target="_blank" rel="noopener noreferrer">
+                    <TelegramIcon className="boton" sx={{ fontSize: "3rem", color: ColoresJulioFood.textos }}/>
                 </Button>
             </ContenedorBotones>
 

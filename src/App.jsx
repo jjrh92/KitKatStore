@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Banner from './components/Banner/Banner'
 import Footer from './components/Footer/Footer'
 import { usePleaseStay } from 'react-use-please-stay'
 import './reset.css'
@@ -10,8 +11,10 @@ function App() {
 
     titles: [
 
-      "Mejor Vendo Empanadas",
-      "Comisión 43305 React",
+      "Kilo & Kilo",
+      "jjrh92.dev",
+      "Los KitKats más exoticos",
+      "43305 React",
 
     ],
 
@@ -20,8 +23,10 @@ function App() {
 
     faviconURIs: [
 
-      "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-empanada-street-food-flaticons-lineal-color-flat-icons-2.png",
-      "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-empanada-street-food-flaticons-lineal-color-flat-icons.png",
+      "https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/external-chocolate-love-moment-photo3ideastudio-lineal-color-photo3ideastudio.png",
+      "https://img.icons8.com/external-colours-bomsymbols-/91/external-chocolate-matcha-green-tea-colours-bomsymbols-.png",
+      "https://img.icons8.com/dotty/80/developer.png",
+      "https://img.icons8.com/office/80/chocolate-bar.png",
 
     ],
 
@@ -34,7 +39,8 @@ function App() {
     <div className='app'>
 
       <Navbar />
-      <ItemListContainer greeting="Bienvenido....Va un saludo a quien corrige esta entrega"/>
+      <Banner />
+      <ItemListContainer/>
       <Footer />
         
     </div>

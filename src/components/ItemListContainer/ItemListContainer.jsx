@@ -1,10 +1,68 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { styled } from '@mui/system';
+import { ColoresJulioFood } from "../../Colores";
+import getData from "../../services/asyncMock";
+import Item from "../Item/Item";
+import "./ItemListContainer.css";
 
-const ItemListContainer = (props) => {
-        
+const ContenedorCategoria = styled ("div") ({
+
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    padding: "2rem",
+    backgroundColor: ColoresJulioFood.fondo,
+
+});
+
+const ContenedorProductos = styled ("section") ({
+
+    display: "flex",
+    flexWrap: "nowrap",
+    overflowX: "auto",
+    gap: "5px",
+    width: "100%",
+
+});
+
+const H1Encabezado = styled ("h1") ({
+
+    color: "whitesmoke",
+    fontWeight: "bold",
+    fontFamily: "KittyKatt",
+    fontSize: "28px",
+    paddingBottom: "10px",
+    userSelect: "none",
+    
+});
+
+const ItemListContainer = () => {
+
+    const [products, setProducts] = useState([]);
+
+    async function requestProducts () {
+
+        const response = await getData ();
+        setProducts (response)
+
+    }
+
+    useEffect( () => {
+
+        requestProducts ();
+
+    }, []);
+   
     return (
 
-        <p>{props.greeting}</p>
+        <ContenedorCategoria>
+            <H1Encabezado>Productos Disponibles</H1Encabezado>
+            <ContenedorProductos>
+                <ContenedorProductos>
+                    {products.map ( (item) => <Item key={item.id} {...item} />) }
+                </ContenedorProductos>
+            </ContenedorProductos>
+        </ContenedorCategoria>
 
     );
 
