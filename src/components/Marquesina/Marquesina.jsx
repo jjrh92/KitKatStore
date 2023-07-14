@@ -15,6 +15,7 @@ const TextoMarquesina = styled ("p") ({
     fontFamily: "KittyKatt",
     fontSize: "24px",
     height: "70px",
+    userSelect: "none",
 
 });
 
