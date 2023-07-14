@@ -12,14 +12,18 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fullpage/react-fullpage": "^0.1.40",
     "@marqueefy/marqueefy": "^1.0.3",
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.7",
+    "bootstrap": "^5.3.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.0",
     "react-helmet": "^6.1.0",
-    "react-use-please-stay": "^1.6.11"
+    "react-use-please-stay": "^1.6.11",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

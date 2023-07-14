@@ -13,15 +13,24 @@ const Logo = styled ("img") ({
 
 });
 
-const ContenedorNavbar = styled ("header") ({
+const ContenedorPadre = styled ("header") ({
 
-    padding: "2rem",
+    padding: "1rem 2rem 0rem 2rem",
     display: "flex",
-    justifyContent: "space-between",
     fontFamily: "KittyKatt",
     borderTop: "0.125rem solid",
     borderBottom: "0.125rem solid",
-    borderColor: ColoresJulioFood.textos,
+    borderColor: ColoresJulioFood.hover,
+    flexDirection: "column",
+
+});
+
+const ContenedorHijo = styled ("header") ({
+
+    display: "flex",
+    justifyContent: "space-between",
+    fontFamily: "KittyKatt",
+    flexDirection: "row",
 
 });
 
@@ -41,27 +50,46 @@ const ContenedorCategorias = styled ("div") ({
 
 });
 
+const TextoHeader = styled ("span") ({
+
+    fontWeight: "bold",
+    fontSize: "24px",
+    textAlign: "center",
+    color: ColoresJulioFood.textos,
+    userSelect: "none",
+    fontFamily: "KittyKatt",
+    paddingBottom: "1rem",
+
+});
+
 const Navbar = () => {
         
     return (
 
-        <ContenedorNavbar>
+        <ContenedorPadre>
+            <ContenedorHijo>
 
-            <ContenedorLogo>
-                <Link draggable="false" href="./index.html" title="Click para refrescar la pagina"><Logo className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/></Link>
-            </ContenedorLogo>
+                <ContenedorLogo>
+                    <Link draggable="false" href="./index.html" title="Click para refrescar la pagina"><Logo className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/></Link>
+                </ContenedorLogo>
 
-            <ContenedorCategorias>
-                <Categoria Ruta="#1" Texto="Menu1"/>
-                <Categoria Ruta="#2" Texto="Menu2"/>
-                <Categoria Ruta="#3" Texto="Menu3"/>
-                <Categoria Ruta="#4" Texto="Menu4"/>
-                <Categoria Ruta="#5" Texto="Menu5"/>
-            </ContenedorCategorias>
+                <ContenedorCategorias>
+                    <Categoria Ruta="#1" Texto="Menu1"/>
+                    <Categoria Ruta="#2" Texto="Menu2"/>
+                    <Categoria Ruta="#3" Texto="Menu3"/>
+                    <Categoria Ruta="#4" Texto="Menu4"/>
+                    <Categoria Ruta="#5" Texto="Menu5"/>
+                </ContenedorCategorias>
 
-            <CartWidget Cantidad={""}/>
+                <CartWidget Cantidad={""}/>
 
-        </ContenedorNavbar>
+            </ContenedorHijo>
+            
+            <TextoHeader>
+                🍫Postres exoticos a la puerta de tu casa📦
+            </TextoHeader>
+            
+        </ContenedorPadre>
         
     );
 

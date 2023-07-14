@@ -5,7 +5,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { ColoresJulioFood } from "../../Colores";
+import Marquesina from "../Marquesina/Marquesina";
 import "./Footer.css";
+
 
 const ContenedorFooter = styled ("footer") ({
 
@@ -14,7 +16,7 @@ const ContenedorFooter = styled ("footer") ({
     flexDirection: "column",
     borderTop: "0.125rem solid",
     borderBottom: "0.125rem solid",
-    borderColor: ColoresJulioFood.textos,
+    borderColor: ColoresJulioFood.hover,
 
 });
 
@@ -45,12 +47,14 @@ const Footer = () => {
 
         <ContenedorFooter>
 
+            <Marquesina />
+
              <TextoFooter>
-                Proyecto sin fines de lucro.
+                Proyecto academico sin fines de lucro.
             </TextoFooter>
 
             <TextoFooter>
-                43305 ReactJS - Coderhouse - 2023.
+                Comision 43305 - Agosto 2023.
             </TextoFooter>
 
             <ContenedorBotones>

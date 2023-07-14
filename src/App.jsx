@@ -13,7 +13,7 @@ function App() {
 
       "Kilo & Kilo",
       "jjrh92.dev",
-      "Los KitKats más exoticos",
+      "Postres exoticos a la puerta de tu casa",
       "43305 React",
 
     ],
@@ -25,7 +25,6 @@ function App() {
 
       "https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/external-chocolate-love-moment-photo3ideastudio-lineal-color-photo3ideastudio.png",
       "https://img.icons8.com/external-colours-bomsymbols-/91/external-chocolate-matcha-green-tea-colours-bomsymbols-.png",
-      "https://img.icons8.com/dotty/80/developer.png",
       "https://img.icons8.com/office/80/chocolate-bar.png",
 
     ],

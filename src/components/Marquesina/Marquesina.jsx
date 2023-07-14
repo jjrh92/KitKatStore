@@ -11,10 +11,10 @@ const ContenedorMarquesina = styled ("div") ({
 
 const TextoMarquesina = styled ("p") ({
 
-    color: ColoresJulioFood.hover,
+    color: ColoresJulioFood.textos,
     fontFamily: "KittyKatt",
-    fontSize: "30px",
-    height: "710px",
+    fontSize: "24px",
+    height: "70px",
 
 });
 
@@ -23,9 +23,9 @@ const Marquesina = () => {
     return (
 
         <ContenedorMarquesina>
-            <Marquee>
+            <Marquee speed="100">
 
-                <TextoMarquesina>Las compras sobre los $40usd obtienen despacho gratis.</TextoMarquesina>
+                <TextoMarquesina>Delivery gratis para compras sobre $25usd.</TextoMarquesina>
 
             </Marquee>
         </ContenedorMarquesina>

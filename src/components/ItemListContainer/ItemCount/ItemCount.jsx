@@ -40,7 +40,7 @@ const ItemCount = (props) => {
         if (Quantity <= 0) {
 
             setQuantity (PreviousQuantity => PreviousQuantity = 0)
-            console.log ("🥟Cheat Code Activated!😱\nIntentaste restar a 0 lo cual no esta permitido!\nEl admin te debe una empanada.");
+            alert ("Cheat Code Activated!🤖\nIntentaste restar a 0 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
             
         }
 

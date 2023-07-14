@@ -1,64 +1,31 @@
-import React from "react";
+import React from 'react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { styled } from '@mui/system';
-import { ColoresJulioFood } from "../../Colores";
-import Marquesina from "../Marquesina/Marquesina";
+import { ColoresJulioFood } from '../../Colores';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './Banner.css';
 
 const ContenedorBanner = styled ("section") ({
 
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "space-between",
-    backgroundColor: ColoresJulioFood.fondo,
-    backgroundImage: `url(${"https://trumpwallpapers.com/wp-content/uploads/Kitkat-Wallpaper-01-2000-x-1000.jpg"})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    height: "100vh",
-    borderBottom: "1px solid",
+    display: 'flex',
+    flexDirection: 'column',
+    borderBottom: "0.125rem solid",
     borderColor: ColoresJulioFood.hover,
-
-});
-
-const H1Hero = styled ("h1") ({
-
-    color: ColoresJulioFood.textos,
-    fontFamily: "KittyKatt",
-    fontSize: "35px",
-
-});
-
-const TextoHero = styled ("p") ({
-
-    color: ColoresJulioFood.textos,
-    fontFamily: "KittyKatt",
-    fontSize: "18px",
-    lineHeight: "21px",
-    maxWidth: "600px",
-    fontWeight: "500",
-    paddingTop: "10px",
-
-});
-
-
-const ContenedorTextos = styled ("div") ({
-
-    display: "flex",
-    flexDirection: "column",
-    justifyItems: "end",  
-
-});
-
-const Hero = styled ("div") ({
-
-    display: "flex",
-    flexDirection: "row",
-    padding: "2rem",
-    alignItems: "end",
-    justifyItems: "end",
+    width: "100%",
+    height: "650px",
     userSelect: "none",
 
 });
 
+const ImagenBanner = styled ("img") ({
+
+    display: "flex",
+
+
+});
 
 const Banner = () => {
 
@@ -66,19 +33,24 @@ const Banner = () => {
 
         <ContenedorBanner>
 
-            <Marquesina />
+            <Swiper style={{"--swiper-pagination-color": ColoresJulioFood.hover, "--swiper-pagination-bullet-inactive-color": ColoresJulioFood.fondo,}} spaceBetween={30} centeredSlides={true} autoplay={{ delay: 5000, disableOnInteraction: true,}} pagination={{ clickable: true,}} navigation={true} modules={[Autoplay, Pagination, Navigation]}>
 
-            <Hero>
+                <SwiperSlide><ImagenBanner src='https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/7SDQAASLVNFJZAL4CQMIWF76RU.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://hips.hearstapps.com/hmg-prod/images/new-kit-kat-1525973564.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://d2z2mkwk6fkehh.cloudfront.net/f2me/blog/How%20to%20Buy%20Kit%20Kats%20online%20from%20japan%20and%20ship%20internationally/KitKat1.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://media.timeout.com/images/105265680/image.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://people.com/thmb/XKlXJApM-YfnDZmokle22q-LhPo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(629x499:631x501)/KIT-KAT-Blueberry-Muffin-1-7b058562758640d1ad5cf5aad55fdda7.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://www.umami-insider.com/asset/uploads/Japans-Love-of-Kit-Kat-Bars-300-Flavors.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://images.squarespace-cdn.com/content/v1/5c99011c77b9037f574a56be/1613079869526-XJ55HAX5G1QW62H3NL30/KitKatScroll_Images-01.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://www.tastingtable.com/img/gallery/23-kit-kat-flavors-ranked/l-intro-1674501411.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://www.mashed.com/img/gallery/the-international-kit-kat-flavor-30-of-fans-want-to-try-the-most/l-intro-1626629362.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://soranews24.com/wp-content/uploads/sites/3/2019/04/japanese-kitkats-mint-chocolate-get-fresh-with-new-peach-mint-flavour-this-summer-japan-chocolates-top.jpg' alt='Imagen banner'/></SwiperSlide>
+                <SwiperSlide><ImagenBanner src='https://munchtimeexotics.com/cdn/shop/files/KitKatPeachBag.jpg?v=1687830460&width=1946'/></SwiperSlide>
 
-                <ContenedorTextos>
-                    <H1Hero>Bienvenido a Kilo & Kilo</H1Hero>
-                    <TextoHero>LLevamos a su casa los sabores exoticos de KitKat.</TextoHero>
-                </ContenedorTextos>
-    
-            </Hero>
+            </Swiper>
 
         </ContenedorBanner>
-
+        
     );
 
 };
