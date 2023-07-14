@@ -1,7 +1,7 @@
 const products = [
 
     {
-        id: 1,
+        id: "1",
         title: "Duos",
         description: "Strawberyy + Dark Chocolate.",
         stock: 11,
@@ -10,7 +10,7 @@ const products = [
 
     },
     {
-        id: 2,
+        id: "2",
         title: "Birthday Cake Flavour",
         description: "Birthday Creme.",
         stock: 12,
@@ -19,7 +19,7 @@ const products = [
 
     },
     {
-        id: 3,
+        id: "3",
         title: "Duos",
         description: "Mint + Dark Chocolate.",
         stock: 13,
@@ -28,7 +28,7 @@ const products = [
 
     },
     {
-        id: 4,
+        id: "4",
         title: "Miniatura",
         description: "Edición Especial Pascua.",
         stock: 14,
@@ -37,7 +37,7 @@ const products = [
 
     },
     {
-        id: 5,
+        id: "5",
         title: "Dark",
         description: "Dark Chocolate.",
         stock: 15,
@@ -46,7 +46,7 @@ const products = [
 
     },
     {
-        id: 6,
+        id: "6",
         title: "Blueberry Muffin",
         description: "Torta de Blueberry.",
         stock: 16,
@@ -55,7 +55,7 @@ const products = [
 
     },
     {
-        id: 7,
+        id: "7",
         title: "White Chocolate",
         description: "Chocolate Blanco.",
         stock: 17,
@@ -64,7 +64,7 @@ const products = [
 
     },
     {
-        id: 8,
+        id: "8",
         title: "Duos",
         description: "Mocha + Chocolate.",
         stock: 18,
@@ -73,7 +73,7 @@ const products = [
 
     },
     {
-        id: 9,
+        id: "9",
         title: "King Size Classic",
         description: "Crisp Wafers.",
         stock: 19,
