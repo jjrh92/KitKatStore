@@ -18,7 +18,7 @@ const ItemCount = (props) => {
 
     const { stock } = props;
 
-    function AddQuantity () {
+    function onAdd () {
 
         if (Quantity >= stock) {
 
@@ -35,12 +35,12 @@ const ItemCount = (props) => {
     
     }
 
-    function SubtractQuantity () {
+    function onSubtract () {
 
         if (Quantity <= 0) {
 
             setQuantity (PreviousQuantity => PreviousQuantity = 0)
-            alert ("Cheat Code Activated!🤖\nIntentaste restar a 0 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
+            console.log ("Cheat Code Activated!🤖\nIntentaste restar a 0 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
             
         }
 
@@ -57,7 +57,7 @@ const ItemCount = (props) => {
     return (
 
         <ContenedorBotones>
-            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={AddQuantity} rel="noopener noreferrer">
+            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={onAdd} rel="noopener noreferrer">
 
                 <AddIcon />
 
@@ -66,7 +66,7 @@ const ItemCount = (props) => {
             <IconButton sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito"rel="noopener noreferrer">{Quantity}<AddShoppingCartIcon />
             </IconButton>
 
-            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={SubtractQuantity} rel="noopener noreferrer">
+            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={onSubtract} rel="noopener noreferrer">
 
                 <RemoveIcon />
 
