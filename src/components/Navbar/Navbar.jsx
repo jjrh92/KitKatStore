@@ -1,8 +1,7 @@
 import React from "react";
 import { styled } from '@mui/system';
-import { Link } from "@mui/material";
+import Enlace from "../Enlace/Enlace";
 import RutaLogo from "../../assets/logo.png";
-import Categoria from "./Categoria/Categoria";
 import CartWidget from "../Cart/CartWidget";
 import { ColoresJulioFood } from "../../Colores";
 
@@ -25,11 +24,10 @@ const ContenedorPadre = styled ("header") ({
 
 });
 
-const ContenedorHijo = styled ("header") ({
+const ContenedorHijo = styled ("section") ({
 
     display: "flex",
     justifyContent: "space-between",
-    fontFamily: "KittyKatt",
     flexDirection: "row",
 
 });
@@ -50,15 +48,15 @@ const ContenedorCategorias = styled ("div") ({
 
 });
 
-const TextoHeader = styled ("span") ({
+const TextoHeader = styled ("p") ({
 
     fontWeight: "bold",
     fontSize: "24px",
-    textAlign: "center",
     color: ColoresJulioFood.textos,
     userSelect: "none",
     fontFamily: "KittyKatt",
     paddingBottom: "1rem",
+    textAlign: "center",
 
 });
 
@@ -70,24 +68,20 @@ const Navbar = () => {
             <ContenedorHijo>
 
                 <ContenedorLogo>
-                    <Link draggable="false" href="./index.html" title="Click para refrescar la pagina"><Logo className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/></Link>
+                    <Logo title="Logo" className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/>
                 </ContenedorLogo>
 
                 <ContenedorCategorias>
-                    <Categoria Ruta="#1" Texto="Menu1"/>
-                    <Categoria Ruta="#2" Texto="Menu2"/>
-                    <Categoria Ruta="#3" Texto="Menu3"/>
-                    <Categoria Ruta="#4" Texto="Menu4"/>
-                    <Categoria Ruta="#5" Texto="Menu5"/>
+                    <Enlace Ruta="/" Texto="Home"/>
+                    <Enlace Ruta="/product/6" Texto="Nosotros"/>
+                    <Enlace Ruta="*" Texto="Contacto"/>
                 </ContenedorCategorias>
 
                 <CartWidget Cantidad={""}/>
 
             </ContenedorHijo>
             
-            <TextoHeader>
-                🍫Postres exoticos a la puerta de tu casa📦
-            </TextoHeader>
+            <TextoHeader>🍫Postres exoticos a la puerta de tu casa📦</TextoHeader>
             
         </ContenedorPadre>
         

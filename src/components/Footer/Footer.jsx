@@ -11,7 +11,7 @@ import "./Footer.css";
 
 const ContenedorFooter = styled ("footer") ({
 
-    padding: "2rem",
+    padding: "1rem",
     display: "flex",
     flexDirection: "column",
     borderTop: "0.125rem solid",
@@ -37,7 +37,7 @@ const ContenedorBotones = styled("div") ({
     display: "flex",
     justifyContent: "center",
     marginTop: "6px",
-    gap: "13px",
+    gap: "10px",
 
 });
 
@@ -48,10 +48,6 @@ const Footer = () => {
         <ContenedorFooter>
 
             <Marquesina />
-
-             <TextoFooter>
-                Proyecto academico sin fines de lucro.
-            </TextoFooter>
 
             <TextoFooter>
                 Comision 43305 - Agosto 2023.

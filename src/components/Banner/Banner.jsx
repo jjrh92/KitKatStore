@@ -15,7 +15,7 @@ const ContenedorBanner = styled ("section") ({
     borderBottom: "0.125rem solid",
     borderColor: ColoresJulioFood.hover,
     width: "100%",
-    height: "650px",
+    height: "400px",
     userSelect: "none",
 
 });

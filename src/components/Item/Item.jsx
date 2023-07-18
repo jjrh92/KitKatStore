@@ -1,6 +1,7 @@
 import { styled } from '@mui/system';
 import ItemCount from '../ItemListContainer/ItemCount/ItemCount';
 import { ColoresJulioFood } from '../../Colores';
+import { Link } from 'react-router-dom';
 
 const ContenedorItem = styled ("div") ({
 
@@ -95,6 +96,10 @@ function Item (props) {
 
             <ContenedorImagen>
                 <ImagenProducto draggable="false" src={img} alt={title} />
+
+                <Link title={"Ver más detalles del producto con id: "+id+ "."} draggable="false" style={{fontFamily:"KittyKatt" ,fontSize: "20px", color: ColoresJulioFood.fondo, textDecoration: "none", textAlign: "center", paddingBottom: "7px"}} to={`/product/${id}`}>Ver detalle del producto</Link>
+
+
             </ContenedorImagen>
             <ItemCount stock={stock} />
         </ContenedorItem>

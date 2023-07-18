@@ -56,7 +56,7 @@ const ItemListContainer = () => {
     return (
 
         <ContenedorCategoria>
-            <H1Encabezado>Productos Disponibles - Precios en Dolares (USD).</H1Encabezado>
+            <H1Encabezado>Catalogo de Productos Disponibles - Precios en Dolares (USD).</H1Encabezado>
             <ContenedorProductos>
                 <ContenedorProductos>
                     {products.map ( (item) => <Item key={item.id} {...item} />) }

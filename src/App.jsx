@@ -1,8 +1,12 @@
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Banner from './components/Banner/Banner'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Error404 from './components/404/404'
 import Footer from './components/Footer/Footer'
 import { usePleaseStay } from 'react-use-please-stay'
+
 import './reset.css'
 
 function App() {
@@ -23,7 +27,6 @@ function App() {
 
     faviconURIs: [
 
-      "https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/external-chocolate-love-moment-photo3ideastudio-lineal-color-photo3ideastudio.png",
       "https://img.icons8.com/external-colours-bomsymbols-/91/external-chocolate-matcha-green-tea-colours-bomsymbols-.png",
       "https://img.icons8.com/office/80/chocolate-bar.png",
 
@@ -35,14 +38,16 @@ function App() {
 
   return (
 
-    <div className='app'>
 
+    <BrowserRouter>
       <Navbar />
-      <Banner />
-      <ItemListContainer/>
-      <Footer />
-        
-    </div>
+      <Routes>
+        <Route path="/" element={<><Banner/><ItemListContainer/></>} />
+        <Route path="/product/:id" element={<ItemDetailContainer/>} />
+        <Route path="*" element={<Error404/>} />
+      </Routes>
+      <Footer /> 
+    </BrowserRouter>
 
   )
   
