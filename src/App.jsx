@@ -6,8 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error404 from './components/404/404'
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
-import Contacto from './components/Contacto/Contacto'
-import Nosotros from './components/Nosotros/Nosotros'
+import Checkout from './components/Checkout/Checkout'
 import { usePleaseStay } from 'react-use-please-stay'
 
 import './reset.css'
@@ -41,17 +40,16 @@ function App() {
 
   return (
 
-
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<><Banner/><ItemListContainer/></>} />
+        <Route path="/category/:categoryId" element={<><Banner/><ItemListContainer/></>} />
         <Route path="/product/:id" element={<ItemDetailContainer/>} />
         <Route path="/Cart" element={<Cart/>} />
-        <Route path="/Contacto" element={<Contacto/>} />
-        <Route path="/Nosotros" element={<Nosotros/>} />
+        <Route path="/Checkout" element={<Checkout/>} />
         <Route path="*" element={<Error404/>} />
-      </Routes>
+      </Routes>      
       <Footer /> 
     </BrowserRouter>
 
@@ -59,4 +57,4 @@ function App() {
   
 }
 
-export default App
+export default App;

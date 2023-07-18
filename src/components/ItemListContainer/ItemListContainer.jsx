@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
-import getData from "../../services/asyncMock";
+import getData, {getCategoryData} from "../../services/asyncMock";
 import Item from "../Item/Item";
 import "./ItemListContainer.css";
+import { useParams } from "react-router-dom";
 
 const ContenedorCategoria = styled ("div") ({
 
@@ -40,10 +41,12 @@ const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
 
+    const { categoryId } = useParams ();
+
     async function requestProducts () {
 
-        const response = await getData ();
-        setProducts (response)
+        let response = categoryId ? await getCategoryData (categoryId) : await getData ()
+        setProducts (response);
 
     }
 
@@ -51,7 +54,7 @@ const ItemListContainer = () => {
 
         requestProducts ();
 
-    }, []);
+    }, [categoryId]);
    
     return (
 

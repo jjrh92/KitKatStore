@@ -78,9 +78,10 @@ const Navbar = () => {
                 </ContenedorLogo>
 
                 <ContenedorCategorias>
-                    <Enlace Ruta="/" Texto="Home"/>
-                    <Enlace Ruta="/Nosotros" Texto="Nosotros"/>
-                    <Enlace Ruta="/Contacto" Texto="Contacto"/>
+                    <Enlace Ruta="/" Texto="Ver Todos"/>
+                    <Enlace Ruta="/category/Postres" Texto="Postres"/>
+                    <Enlace Ruta="/category/Juguetes" Texto="Juguetes"/>
+                    <Enlace Ruta="/category/Gadgets" Texto="Gadgets"/>
                 </ContenedorCategorias>
 
                 <CartWidget Cantidad={""}/>
