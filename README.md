@@ -58,7 +58,7 @@ Clone the repo and execute npm install from your vscode
 Usage <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2lvcWx2Ynpia3BjYnk3Yzlvdmw1cnBjdHI3cm5uY3QzenM1enNibiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/igPDtkfSJZMFwE0LP8/giphy.gif" width="30px"> Uso
 </h1>
 
-CRUD stands for: Create, Read, Update, Delete. - CRUD significa (por sus siglas en ingles): Crear, Leer, Actualizar, Borrar. 
+REACT. 
 
 
 <!-- CONTRIBUTING -->
