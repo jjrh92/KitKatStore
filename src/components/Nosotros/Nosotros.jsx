@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
-import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const ContenedorPaginaNosotros = styled ("div") ({
 
@@ -40,7 +40,7 @@ function Nosotros () {
 
             <TextoNosotros>Nuestra Historia - Vision y Mision</TextoNosotros>
             <TextoNosotros>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus accusamus perspiciatis, magni molestiae id necessitatibus quos exercitationem quis a sunt odit officiis! Nesciunt aperiam numquam minima laboriosam earum eaque totam.</TextoNosotros>
-            <Button sx={{fontFamily: "KittyKatt", fontSize: "15px", fontWeight: "bold", marginBottom: "17px",}} variant="outlined" color='error'>Volver al Home</Button>
+            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
             {/* <ImagenNosotros src='https://creativereview.imgix.net/content/uploads/2012/02/4oclock_01.jpg'></ImagenNosotros> */}
 
         </ContenedorPaginaNosotros>

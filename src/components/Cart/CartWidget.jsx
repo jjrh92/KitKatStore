@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import { ColoresJulioFood } from "../../Colores";
 import { styled } from '@mui/system';
+import { Link } from "react-router-dom";
 import "../Cart/CartWidget.css";
 
 const TextoCantidad = styled ("span") ({
@@ -17,17 +18,17 @@ const CartWidget = (props) => {
         
     return (
 
-    <Button className="Cart" variant="text" color="error" title="CheckOut" href="" target="_blank" rel="noopener noreferrer" sx={{color: ColoresJulioFood.textos}}>
+        <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.textos, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/Cart"}>
 
         <ShoppingCartCheckoutRoundedIcon className="Cart" sx={{fontSize: "4.3125rem"}}/>
 
         <TextoCantidad title="Cantidad de items en el carrito" className="Cart">
 
-            {props.Quantity}
+        {props.Quantity}
 
         </TextoCantidad>
 
-    </Button>
+        </Link>
 
     );
 

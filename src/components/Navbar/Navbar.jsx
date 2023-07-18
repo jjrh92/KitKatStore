@@ -4,11 +4,13 @@ import Enlace from "../Enlace/Enlace";
 import RutaLogo from "../../assets/logo.png";
 import CartWidget from "../Cart/CartWidget";
 import { ColoresJulioFood } from "../../Colores";
+import { Link } from "react-router-dom";
 
 const Logo = styled ("img") ({
 
     height: "100%",
     width: "80%",
+    userSelect: "none",
 
 });
 
@@ -68,13 +70,17 @@ const Navbar = () => {
             <ContenedorHijo>
 
                 <ContenedorLogo>
-                    <Logo title="Logo" className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/>
+
+                <Link draggable="false" to="/">
+                    <Logo title="Brand Logo" className="Logo" draggable="false" src={RutaLogo} alt="Kilo&Kilo Logo"/>
+                </Link>
+
                 </ContenedorLogo>
 
                 <ContenedorCategorias>
                     <Enlace Ruta="/" Texto="Home"/>
-                    <Enlace Ruta="/product/6" Texto="Nosotros"/>
-                    <Enlace Ruta="*" Texto="Contacto"/>
+                    <Enlace Ruta="/Nosotros" Texto="Nosotros"/>
+                    <Enlace Ruta="/Contacto" Texto="Contacto"/>
                 </ContenedorCategorias>
 
                 <CartWidget Cantidad={""}/>

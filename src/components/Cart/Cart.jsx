@@ -2,7 +2,7 @@ import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import { Link } from 'react-router-dom';
 
-const ContenedorPaginaContacto = styled ("div") ({
+const ContenedorPaginaCart = styled ("div") ({
 
     display: "flex",
     flexDirection: "column",
@@ -13,7 +13,7 @@ const ContenedorPaginaContacto = styled ("div") ({
 });
 
 
-const TextoContacto = styled ("h1") ({
+const TextoCart = styled ("h1") ({
 
     textAlign: "center",
     color: ColoresJulioFood.fondo,
@@ -25,26 +25,26 @@ const TextoContacto = styled ("h1") ({
 
 });
 
-const ImagenContacto = styled ("img") ({
+const ImagenCart = styled ("img") ({
 
 
 });
 
 
-function Contacto () {
+function Cart () {
 
     return (
 
-        <ContenedorPaginaContacto>
+        <ContenedorPaginaCart>
 
-            <TextoContacto>Seccion Contacto WIP En construccion</TextoContacto>
+            <TextoCart>Seccion Carrito WIP En construccion</TextoCart>
             <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
-            <ImagenContacto src=''></ImagenContacto>
+            <ImagenCart src=''></ImagenCart>
 
-        </ContenedorPaginaContacto>
+        </ContenedorPaginaCart>
 
     )
 
 }
 
-export default Contacto;
+export default Cart;
