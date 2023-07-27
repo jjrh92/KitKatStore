@@ -16,7 +16,7 @@ const ContenedorBotones = styled ("div") ({
 
 const ItemCount = (props) => {
 
-    const { stock } = props;
+    const { id, title, description, stock, price, img } = props;
 
     function onAdd () {
 
@@ -46,13 +46,41 @@ const ItemCount = (props) => {
 
         else {
 
-            setQuantity (PreviousQuantity => PreviousQuantity - 1)
+            setQuantity (PreviousQuantity => PreviousQuantity - 1);
 
         }
 
     }
 
     const [Quantity, setQuantity] = useState(0);
+
+    
+    function handleAddToCart () {
+
+        function MultiplicarCarrito (a,b) {
+
+            return a * b;
+
+        }
+
+        let CalcularTotalAgregado = MultiplicarCarrito (Quantity,price);
+        
+        if (Quantity <= 0) {
+
+            alert ("Carrito vacio, agrega un producto antes de usar el boton.")
+
+        }
+
+        else {
+
+            alert (`Precio unitario es de $${price}USD\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado}USD.`)
+
+            return CalcularTotalAgregado;
+
+        }
+
+
+    };
 
     return (
 
@@ -63,7 +91,7 @@ const ItemCount = (props) => {
 
             </IconButton>
 
-            <IconButton sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito"rel="noopener noreferrer">{Quantity}<AddShoppingCartIcon />
+            <IconButton onClick={handleAddToCart} sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito"rel="noopener noreferrer">{Quantity}<AddShoppingCartIcon />
             </IconButton>
 
             <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={onSubtract} rel="noopener noreferrer">

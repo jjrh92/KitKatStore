@@ -81,7 +81,7 @@ const ImagenProducto = styled ("img") ({
 
 function Item (props) {
 
-    const { id, title, description, stock, price, img } = props;
+    const { id, title, description, stock, price, img, } = props;
 
     return (
 
@@ -101,7 +101,7 @@ function Item (props) {
 
 
             </ContenedorImagen>
-            <ItemCount stock={stock} />
+            <ItemCount id={id} title={title} description={description} stock={stock} price={price} img={img} />
         </ContenedorItem>
 
     );
