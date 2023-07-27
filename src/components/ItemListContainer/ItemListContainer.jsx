@@ -5,6 +5,7 @@ import getData, {getCategoryData} from "../../services/asyncMock";
 import Item from "../Item/Item";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 const ContenedorCategoria = styled ("div") ({
 
@@ -39,14 +40,18 @@ const H1Encabezado = styled ("h1") ({
 
 const ItemListContainer = () => {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState ([]);
+
+    const [loaded, setLoaded] = useState (false);
 
     const { categoryId } = useParams ();
 
     async function requestProducts () {
 
+        setLoaded (false);
         let response = categoryId ? await getCategoryData (categoryId) : await getData ()
         setProducts (response);
+        setLoaded (true);
 
     }
 
@@ -55,6 +60,8 @@ const ItemListContainer = () => {
         requestProducts ();
 
     }, [categoryId]);
+
+    if (!loaded) return <Loader />
    
     return (
 
