@@ -7,6 +7,7 @@ import Error404 from './components/404/404'
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
+import Contacto from './components/Contacto/Contacto'
 import { usePleaseStay } from 'react-use-please-stay'
 
 import './reset.css'
@@ -46,7 +47,8 @@ function App() {
         <Route path="/" element={<><Banner/><ItemListContainer/></>} />
         <Route path="/category/:categoryId" element={<><Banner/><ItemListContainer/></>} />
         <Route path="/product/:id" element={<ItemDetailContainer/>} />
-        <Route path="/Cart" element={<Cart/>} />
+        <Route path="/contacto" element={<Contacto/>} />
+        <Route path="/cart" element={<Cart/>} />
         <Route path="/Checkout" element={<Checkout/>} />
         <Route path="*" element={<Error404/>} />
       </Routes>      
