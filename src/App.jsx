@@ -9,8 +9,10 @@ import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto'
 import { usePleaseStay } from 'react-use-please-stay'
-
+import { createContext } from 'react'
 import './reset.css'
+
+const cartContext = createContext ( {cart: []} );
 
 function App() {
 
@@ -60,3 +62,5 @@ function App() {
 }
 
 export default App;
+
+export { cartContext };

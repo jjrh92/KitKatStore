@@ -5,30 +5,52 @@ import { ColoresJulioFood } from "../../Colores";
 import { styled } from '@mui/system';
 import { Link } from "react-router-dom";
 import "../Cart/CartWidget.css";
+import { useContext } from "react";
+import { cartContext } from "../../App";
+
+const WidgetContainer = styled ("div") ({
+
+
+    display: "flex",
+    flexDirection: "column",
+
+});
 
 const TextoCantidad = styled ("span") ({
 
     color: ColoresJulioFood.textos,
-    fontSize: "3.3125rem",
+    fontSize: "1rem",
     fontFamily: "KittyKatt",
+    display: "flex",
+    userSelect: "none",
 
 });
 
 const CartWidget = (props) => {
+
+    const context = useContext (cartContext);
+    console.log (context);
         
     return (
 
-        <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.textos, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>
+        <WidgetContainer>
 
-        <ShoppingCartCheckoutRoundedIcon className="Cart" sx={{fontSize: "4.3125rem"}}/>
+            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.textos, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px", display: "flex", flexDirection: "column"}} to={"/cart"}>
 
-        <TextoCantidad title="Cantidad de items en el carrito" className="Cart">
+            <Button sx={{color: "#F7F0F0",}}><ShoppingCartCheckoutRoundedIcon className="Cart" sx={{fontSize: "4.3125rem"}}/></Button>
 
-        {props.Quantity}
 
-        </TextoCantidad>
 
-        </Link>
+            </Link>
+
+            <TextoCantidad>
+
+            {"🍫"+ context.cart.length+ "|"+ props.Quantity+ "💵" }
+
+            </TextoCantidad>
+
+        </WidgetContainer>
+
 
     );
 

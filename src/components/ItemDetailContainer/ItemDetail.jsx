@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import {getProductData} from "../../services/asyncMock";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
@@ -49,7 +49,6 @@ const ImagenProducto = styled ("img") ({
 
 function ItemDetail () {
 
-
     const [product, setProduct] = useState ({});
 
     const{ id } = useParams ();
@@ -67,6 +66,7 @@ function ItemDetail () {
 
     }, []);
 
+
     return (
 
         <ContenedorPadre>
@@ -78,7 +78,8 @@ function ItemDetail () {
 
             <ContenedorHijo>
                 <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
-                <ItemCount title={product.title} price={product.price} stock={product.stock} />
+                <ItemCount title={product.title} price={product.price} stock={product.stock} /> 
+                {/* Aca ocurre la magia */}
             </ContenedorHijo>
 
             <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>

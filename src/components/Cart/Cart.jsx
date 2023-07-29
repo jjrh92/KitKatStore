@@ -9,6 +9,7 @@ const ContenedorPaginaCart = styled ("div") ({
     alignItems: "center",
     userSelect: "none",
     backgroundColor: ColoresJulioFood.textos,
+    height: "100vh",
     
 });
 

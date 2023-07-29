@@ -37,10 +37,10 @@ const ItemCount = (props) => {
 
     function onSubtract () {
 
-        if (Quantity <= 0) {
+        if (Quantity <= 1) {
 
-            setQuantity (PreviousQuantity => PreviousQuantity = 0)
-            console.log ("Cheat Code Activated!🤖\nIntentaste restar a 0 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
+            setQuantity (PreviousQuantity => PreviousQuantity = 1)
+            console.log ("Cheat Code Activated!🤖\nIntentaste restar a 1 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
             
         }
 
@@ -52,12 +52,10 @@ const ItemCount = (props) => {
 
     }
 
-    const [Quantity, setQuantity] = useState(0);
-
+    const [Quantity, setQuantity] = useState(1);
     
     function handleAddToCart () {
 
-        
 
         function MultiplicarCarrito (a,b) {
 
@@ -75,8 +73,7 @@ const ItemCount = (props) => {
 
         else {
 
-            alert (`Precio unitario es de $${props.price}USD\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado}USD.`)
-            console.log (props.price)
+            alert (`Precio unitario es de $${props.price} USD.\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado} USD.`);
 
             return CalcularTotalAgregado;
 
