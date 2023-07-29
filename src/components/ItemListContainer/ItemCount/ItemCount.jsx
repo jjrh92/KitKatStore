@@ -16,7 +16,7 @@ const ContenedorBotones = styled ("div") ({
 
 const ItemCount = (props) => {
 
-    const { id, title, description, stock, price, img } = props;
+    const { title,  stock, price } = props;
 
     function onAdd () {
 
@@ -57,6 +57,8 @@ const ItemCount = (props) => {
     
     function handleAddToCart () {
 
+        
+
         function MultiplicarCarrito (a,b) {
 
             return a * b;
@@ -73,7 +75,8 @@ const ItemCount = (props) => {
 
         else {
 
-            alert (`Precio unitario es de $${price}USD\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado}USD.`)
+            alert (`Precio unitario es de $${props.price}USD\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado}USD.`)
+            console.log (props.price)
 
             return CalcularTotalAgregado;
 

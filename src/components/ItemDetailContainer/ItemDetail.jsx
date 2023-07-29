@@ -3,7 +3,7 @@ import {getProductData} from "../../services/asyncMock";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import ItemCount from "../ItemListContainer/ItemCount/ItemCount";
-import Button from '@mui/material/Button';
+import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -49,6 +49,7 @@ const ImagenProducto = styled ("img") ({
 
 function ItemDetail () {
 
+
     const [product, setProduct] = useState ({});
 
     const{ id } = useParams ();
@@ -77,10 +78,12 @@ function ItemDetail () {
 
             <ContenedorHijo>
                 <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
-                <ItemCount stock={product.stock} />
+                <ItemCount title={product.title} price={product.price} stock={product.stock} />
             </ContenedorHijo>
 
             <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>
+
+            <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Terminar mi Compra<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link>
 
             <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
 
