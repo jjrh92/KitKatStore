@@ -5,7 +5,7 @@ import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import ItemCount from "../ItemListContainer/ItemCount/ItemCount";
-import { cartContext } from "../../context/CartContext";
+import { cartContext } from "../../context/cartContext";
 
 const ContenedorPadre = styled ("div") ({
 
@@ -71,6 +71,7 @@ function ItemDetailContainer () {
 
     addToCart (product, clickCount);
     alert (`Producto agregado al carrito, cantidad: ${clickCount}`);
+    console.log ("Producto agregado:" ,product, "\nCantidad:" ,clickCount)
 
   }
 

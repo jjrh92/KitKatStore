@@ -1,11 +1,10 @@
 import { useState, createContext } from "react";
-
 const cartContext = createContext({ cart: [] });
 
 // Custom provider
 // CartContextProvider (custom componente) !== cartContext.Provider (componente default)
 
-function CartContextProvider(props) {
+function CartContextProvider (props) {
   const [cart, setCart] = useState([]);
 
   function addToCart(product, count) {

@@ -5,7 +5,7 @@ import { ColoresJulioFood } from "../../Colores";
 import { styled } from '@mui/system';
 import { Link } from "react-router-dom";
 import "../Cart/CartWidget.css";
-import { cartContext } from "../../context/CartContext";
+import { cartContext } from "../../context/cartContext";
 
 const WidgetContainer = styled ("div") ({
 

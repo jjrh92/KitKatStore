@@ -1,6 +1,8 @@
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { cartContext } from "../../context/cartContext";
 
 const ContenedorPaginaCart = styled ("div") ({
 
@@ -12,7 +14,6 @@ const ContenedorPaginaCart = styled ("div") ({
     height: "100vh",
     
 });
-
 
 const TextoCart = styled ("h1") ({
 
@@ -29,11 +30,20 @@ const TextoCart = styled ("h1") ({
 
 function Cart () {
 
+    const context = useContext (cartContext);
+    console.log (context.cart) 
+    // Ojo con este objeto mañana
+
     return (
 
         <ContenedorPaginaCart>
 
-            <TextoCart>Seccion Carrito WIP En construccion</TextoCart>
+            <TextoCart>Listado de Productos en Carrito</TextoCart>
+
+            <TextoCart>Cantidad de Productos en Carrito: {context.getTotalItemsInCart()}</TextoCart>
+
+
+
             <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
 
         </ContenedorPaginaCart>
