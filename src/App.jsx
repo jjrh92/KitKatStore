@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto'
-import { CartContextProvider } from "./context/cartContext";
+import { cartContext } from "./context/cartContext";
 import './reset.css'
 
 
@@ -17,7 +17,7 @@ function App() {
 
   return (
 
-    <CartContextProvider>
+    <cartContext>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -31,7 +31,7 @@ function App() {
         </Routes>      
         <Footer /> 
       </BrowserRouter>
-    </CartContextProvider>
+    </cartContext>
 
   )
   
