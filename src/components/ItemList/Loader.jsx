@@ -14,7 +14,7 @@ const TextoLoader = styled ("h1") ({
 
 });
 
-export default function Loader() {
+export default function Loader () {
 
   const [open, setOpen] = React.useState(true);
 

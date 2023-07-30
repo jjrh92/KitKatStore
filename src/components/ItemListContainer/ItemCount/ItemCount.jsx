@@ -1,10 +1,9 @@
-import { useState, useContext } from "react";
-import IconButton from '@mui/material/IconButton';
+import React, { useState } from "react";
 import { styled } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { cartContext } from "../../../App";
+import { IconButton } from "@mui/material";
 
 const ContenedorBotones = styled ("div") ({
 
@@ -14,97 +13,61 @@ const ContenedorBotones = styled ("div") ({
     
 });
 
-const ItemCount = (props) => {
+function ItemCount (props) {
 
-    const { title, stock, price, id } = props;
+  const [clickCount, setClickCount] = useState (1);
 
-    function onAdd () {
+  function handleClickAdd () {
 
-        if (Quantity >= stock) {
+    if (clickCount === props.stock) {
 
-            setQuantity (PreviousQuantity => PreviousQuantity = PreviousQuantity)
-            alert ("Si deseas agregar más de "+ stock +" productos por favor contacta al admin.\nGracias.");
-            
-        }
+      alert ("Si deseas agregar más de "+ props.stock +" productos por favor contacta al admin.\nGracias.");
 
-        else {
-
-            setQuantity (PreviousQuantity => PreviousQuantity + 1)
-
-        }
+    } 
     
-    }
+    else {
 
-    function onSubtract () {
+      setClickCount (clickCount + 1);
 
-        if (Quantity <= 1) {
-
-            setQuantity (PreviousQuantity => PreviousQuantity = 1)
-            
-        }
-
-        else {
-
-            setQuantity (PreviousQuantity => PreviousQuantity - 1);
-
-        }
 
     }
 
-    const [Quantity, setQuantity] = useState (1);
+  }
 
-    const { addToCart } = useContext (cartContext);
-    
-    function handleAddToCart () {
+  function handleClickSub () {
 
-        function MultiplicarCarrito (a,b) {
+    if (clickCount > 1) {
 
-            return a * b;
-
-        }
-
-        let CalcularTotalAgregado = MultiplicarCarrito (Quantity,price);
-        
-        if (Quantity <= 0) {
-
-            alert ("Carrito vacio, agrega un producto antes de usar el boton.")
-
-        }
-
-        else {
-
-            alert (`Agregaste (${Quantity}) unidades (${title}) al carrito.`);
-
-            addToCart (title, price, Quantity, id);
-
-        }
+      setClickCount (clickCount - 1);
 
 
-    };
+    }
 
-    return (
+  }
 
-        <ContenedorBotones>
-            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={onAdd} rel="noopener noreferrer">
-
-                <AddIcon />
-
-            </IconButton>
-
-            <IconButton onClick={handleAddToCart} sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito"rel="noopener noreferrer">{Quantity}<AddShoppingCartIcon />
-            </IconButton>
-
-            <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={onSubtract} rel="noopener noreferrer">
-
-                <RemoveIcon />
-
-            </IconButton>
+  return (
 
 
-        </ContenedorBotones>
-        
+    <ContenedorBotones>
+        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={handleClickAdd}>
 
-    );
+            <AddIcon />
+
+        </IconButton>
+
+        <IconButton onClick={() => props.onConfirm(clickCount)} sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito">{clickCount}<AddShoppingCartIcon />
+        </IconButton>
+
+        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={handleClickSub}>
+
+            <RemoveIcon />
+
+        </IconButton>
+
+
+    </ContenedorBotones>
+
+  );
 
 }
 

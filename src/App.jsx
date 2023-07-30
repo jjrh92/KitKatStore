@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Banner from './components/Banner/Banner'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -8,40 +8,16 @@ import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto'
-import { usePleaseStay } from 'react-use-please-stay'
+import { CartContextProvider } from "./context/cartContext";
 import './reset.css'
 
 
 function App() {
 
-  usePleaseStay({
-
-    titles: [
-
-      "Kilo & Kilo",
-      "jjrh92.dev",
-      "Postres exoticos a la puerta de tu casa",
-      "43305 React",
-
-    ],
-
-    interval: 1500,
-    animationType: Animation.LOOP,
-
-    faviconURIs: [
-
-      "https://img.icons8.com/external-colours-bomsymbols-/91/external-chocolate-matcha-green-tea-colours-bomsymbols-.png",
-      "https://img.icons8.com/office/80/chocolate-bar.png",
-
-    ],
-
-    alwaysRunAnimations: true
-
-  })
 
   return (
 
-    <CartProvider>
+    <CartContextProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -55,12 +31,10 @@ function App() {
         </Routes>      
         <Footer /> 
       </BrowserRouter>
-    </CartProvider>
+    </CartContextProvider>
 
   )
   
 }
 
 export default App;
-
-export { cartContext };
