@@ -26,11 +26,6 @@ const TextoCart = styled ("h1") ({
 
 });
 
-const ImagenCart = styled ("img") ({
-
-
-});
-
 
 function Cart () {
 
@@ -40,7 +35,6 @@ function Cart () {
 
             <TextoCart>Seccion Carrito WIP En construccion</TextoCart>
             <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
-            <ImagenCart src=''></ImagenCart>
 
         </ContenedorPaginaCart>
 

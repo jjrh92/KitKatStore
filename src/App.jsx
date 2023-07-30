@@ -9,10 +9,8 @@ import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto'
 import { usePleaseStay } from 'react-use-please-stay'
-import { createContext } from 'react'
 import './reset.css'
 
-const cartContext = createContext ( {cart: []} );
 
 function App() {
 
@@ -43,19 +41,21 @@ function App() {
 
   return (
 
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<><Banner/><ItemListContainer/></>} />
-        <Route path="/category/:categoryId" element={<><Banner/><ItemListContainer/></>} />
-        <Route path="/product/:id" element={<ItemDetailContainer/>} />
-        <Route path="/contacto" element={<Contacto/>} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/Checkout" element={<Checkout/>} />
-        <Route path="*" element={<Error404/>} />
-      </Routes>      
-      <Footer /> 
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<><Banner/><ItemListContainer/></>} />
+          <Route path="/category/:categoryId" element={<><Banner/><ItemListContainer/></>} />
+          <Route path="/product/:id" element={<ItemDetailContainer/>} />
+          <Route path="/contacto" element={<Contacto/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/Checkout" element={<Checkout/>} />
+          <Route path="*" element={<Error404/>} />
+        </Routes>      
+        <Footer /> 
+      </BrowserRouter>
+    </CartProvider>
 
   )
   

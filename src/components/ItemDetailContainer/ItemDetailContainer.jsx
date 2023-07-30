@@ -20,7 +20,7 @@ function ItemDetailContainer () {
 
         requestProduct ();
 
-    }, []);
+    }, [id]);
 
     return (
 

@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { cartContext } from "../../../App";
 
 const ContenedorBotones = styled ("div") ({
 
@@ -16,7 +16,7 @@ const ContenedorBotones = styled ("div") ({
 
 const ItemCount = (props) => {
 
-    const { title,  stock, price } = props;
+    const { title, stock, price, id } = props;
 
     function onAdd () {
 
@@ -40,7 +40,6 @@ const ItemCount = (props) => {
         if (Quantity <= 1) {
 
             setQuantity (PreviousQuantity => PreviousQuantity = 1)
-            console.log ("Cheat Code Activated!🤖\nIntentaste restar a 1 lo cual no esta permitido!\nEl admin te debe un 🍫KitKat Exotico.");
             
         }
 
@@ -52,10 +51,11 @@ const ItemCount = (props) => {
 
     }
 
-    const [Quantity, setQuantity] = useState(1);
+    const [Quantity, setQuantity] = useState (1);
+
+    const { addToCart } = useContext (cartContext);
     
     function handleAddToCart () {
-
 
         function MultiplicarCarrito (a,b) {
 
@@ -73,9 +73,9 @@ const ItemCount = (props) => {
 
         else {
 
-            alert (`Precio unitario es de $${props.price} USD.\nAgregaste (${Quantity}) unidades (${title}) al carrito.\nTu nuevo total es de $${CalcularTotalAgregado} USD.`);
+            alert (`Agregaste (${Quantity}) unidades (${title}) al carrito.`);
 
-            return CalcularTotalAgregado;
+            addToCart (title, price, Quantity, id);
 
         }
 

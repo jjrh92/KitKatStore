@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import {getProductData} from "../../services/asyncMock";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
@@ -64,7 +64,7 @@ function ItemDetail () {
 
         requestProduct ();
 
-    }, []);
+    }, [id]);
 
 
     return (
@@ -78,7 +78,7 @@ function ItemDetail () {
 
             <ContenedorHijo>
                 <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
-                <ItemCount title={product.title} price={product.price} stock={product.stock} /> 
+                <ItemCount title={product.title} price={product.price} stock={product.stock} id={product.id} /> 
                 {/* Aca ocurre la magia */}
             </ContenedorHijo>
 

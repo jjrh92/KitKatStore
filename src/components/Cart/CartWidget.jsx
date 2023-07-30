@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@mui/material";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import { ColoresJulioFood } from "../../Colores";
@@ -12,7 +11,8 @@ const WidgetContainer = styled ("div") ({
 
 
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    alignItems: "center",
 
 });
 
@@ -22,14 +22,14 @@ const TextoCantidad = styled ("span") ({
     fontSize: "1rem",
     fontFamily: "KittyKatt",
     display: "flex",
+    justifyContent: "center",
     userSelect: "none",
 
 });
 
-const CartWidget = (props) => {
+const CartWidget = () => {
 
     const context = useContext (cartContext);
-    console.log (context);
         
     return (
 
@@ -45,7 +45,7 @@ const CartWidget = (props) => {
 
             <TextoCantidad>
 
-            {"🍫"+ context.cart.length+ "|"+ props.Quantity+ "💵" }
+            {context.getTotalItemsInCart() + "🍫"}
 
             </TextoCantidad>
 

@@ -40,7 +40,7 @@ function Error404 () {
 
             <TextoError>Error 404 - Page Not Found</TextoError>
             <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
-            <ImagenError draggable="false" src='https://hub.tabnine.com/v9/static/media/lost-connection-image.ad67b7df6edbf135ebe5f47ab08251c4.svg'></ImagenError>
+            <ImagenError draggable="false" src='https://images7.memedroid.com/images/UPLOADED757/62cfe6d215e26.webp'></ImagenError>
 
         </ContenedorPaginaError>
 
