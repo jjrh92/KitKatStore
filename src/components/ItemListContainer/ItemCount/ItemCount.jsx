@@ -21,7 +21,7 @@ function ItemCount (props) {
 
     if (clickCount === props.stock) {
 
-      alert ("Si deseas agregar más de "+ props.stock +" productos por favor contacta al admin.\nGracias.");
+      alert ("Stock superado, Si deseas agregar más de "+ props.stock +" productos por favor contacta al admin.\nGracias.");
 
     } 
     

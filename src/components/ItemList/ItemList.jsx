@@ -39,30 +39,9 @@ const H1Encabezado = styled ("h1") ({
     
 });
 
-const ItemList = () => {
+const ItemList = (props) => {
 
-    const [products, setProducts] = useState ([]);
-
-    const [loaded, setLoaded] = useState (false);
-
-    const { categoryId } = useParams ();
-
-    async function requestProducts () {
-
-        setLoaded (false);
-        let response = categoryId ? await getCategoryData (categoryId) : await getData ()
-        setProducts (response);
-        setLoaded (true);
-
-    }
-
-    useEffect( () => {
-
-        requestProducts ();
-
-    }, [categoryId]);
-
-    if (!loaded) return <Loader />
+    const { products } = props;
    
     return (
 

@@ -1,5 +1,4 @@
 import { styled } from '@mui/system';
-import ItemCount from '../ItemListContainer/ItemCount/ItemCount';
 import { ColoresJulioFood } from '../../Colores';
 import { Link } from 'react-router-dom';
 
@@ -101,7 +100,6 @@ function Item (props) {
 
 
             </ContenedorImagen>
-            <ItemCount id={id} title={title} description={description} stock={stock} price={price} img={img} />
         </ContenedorItem>
 
     );
