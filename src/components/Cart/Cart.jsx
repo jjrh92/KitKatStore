@@ -31,8 +31,8 @@ const TextoCart = styled ("h1") ({
 function Cart () {
 
     const context = useContext (cartContext);
-    console.log (context.cart) 
-    // Ojo con este objeto mañana
+    let ItemsEnCarrito = context.cart;
+    console.log ("Estos son los items en el carrito:", ItemsEnCarrito) 
 
     return (
 
