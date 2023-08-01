@@ -80,6 +80,8 @@ function Cart () {
 
     }
 
+
+
     if (context.getTotalItemsInCart() === 0) {
 
         alert ("No hay nada en tu carrito para mostrar.");
@@ -95,9 +97,9 @@ function Cart () {
                 <TextoCart>Cantidad de Productos en Carrito: {context.getTotalItemsInCart()}</TextoCart>
 
 
-                {ItemsEnCarrito.map ((props) => {                   
-                
-                    return <ProductCard key={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price}/>
+                {ItemsEnCarrito.map ((props) => {       
+                                    
+                    return <ProductCard key={props.id} id={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price} eliminar={context.removeItem(props.id)}/>
             
                 })}
 

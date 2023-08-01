@@ -95,11 +95,11 @@ function ProductCard (props) {
 
       <ContenedorButtons>
 
-        <IconButton variant="text" sx={{cursor:"unset", color: "#F7F0F0",}} title="Agregar más">
+        <IconButton variant="text" sx={{cursor:"unset", color: "#F7F0F0",}} title={props.id}>
           <AddShoppingCartIcon/>
         </IconButton>
 
-        <IconButton variant="text" sx={{cursor:"unset", color: "#F7F0F0",}} title="Eliminar del Carrito">
+        <IconButton onClick={props.eliminar} title={props.id} variant="text" sx={{cursor:"unset", color: "#F7F0F0",}}>
           <RemoveShoppingCartIcon />
         </IconButton>
 

@@ -8,10 +8,11 @@ function CartContextProvider (props) {
   function addToCart(product, count) {
 
     // Revisando si el producto ya existe en el carrito (de antes)
+
     const existingItemIndex = cart.findIndex(
 
       (item) => item.id === product.id
-      
+
     );
   
     if (existingItemIndex !== -1) {
@@ -46,11 +47,6 @@ function CartContextProvider (props) {
 
     }
     
-  }
-
-  function removeItem (id) {
-    //
-    return null;
   }
 
   function clearCart () {
@@ -105,6 +101,13 @@ function CartContextProvider (props) {
   function getItem (id) {
 
     return cart [0];
+
+  }
+
+  
+  function removeItem (id) {
+
+
 
   }
 
