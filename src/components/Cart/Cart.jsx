@@ -94,9 +94,10 @@ function Cart () {
 
                 <TextoCart>Cantidad de Productos en Carrito: {context.getTotalItemsInCart()}</TextoCart>
 
-                {ItemsEnCarrito.map ((props) => {
 
-                     return <ProductCard key={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price}/>
+                {ItemsEnCarrito.map ((props) => {                   
+                
+                    return <ProductCard key={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price}/>
             
                 })}
 

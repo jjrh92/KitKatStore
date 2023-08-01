@@ -5,13 +5,47 @@ function CartContextProvider (props) {
 
   const [cart, setCart] = useState([]);
 
-  function addToCart (product, count) {
+  function addToCart(product, count) {
 
-    const newCart = cart.map((item) => item);
-    const newItemInCart = { count, ...product };
-    newCart.push(newItemInCart);
-    setCart (newCart);
+    // Revisando si el producto ya existe en el carrito (de antes)
+    const existingItemIndex = cart.findIndex(
 
+      (item) => item.id === product.id
+      
+    );
+  
+    if (existingItemIndex !== -1) {
+
+      // Si existe el producto de antes, actualiza la cantidad) 
+      const newCart = cart.map((item, index) => {
+
+        if (index === existingItemIndex) {
+          return {
+            ...item,
+            count: item.count + count,
+          };
+        } 
+        
+        else {
+          return item;
+
+        }
+
+      });
+  
+      setCart(newCart);
+
+    } 
+    
+    else {
+
+      // El Producto no existe en el carrito, agregalo como un nuevo item. 
+      const newItemInCart = { count, ...product };
+      const newCart = [...cart, newItemInCart];
+      setCart(newCart);
+
+    }
+    
   }
 
   function removeItem (id) {
