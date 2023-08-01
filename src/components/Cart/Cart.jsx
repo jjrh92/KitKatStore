@@ -2,11 +2,11 @@ import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { cartContext } from "../../context/cartContext";
 import ProductCard from './ProductCard';
 import { IconButton } from "@mui/material";
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import BackspaceIcon from '@mui/icons-material/Backspace';
+import { CartContext } from './components/Context/CartContext'
 
 const ContenedorPaginaCart = styled ("div") ({
 
@@ -46,7 +46,7 @@ const ContenedorButtons = styled ("div") ({
 
 function Cart () {
 
-    const context = useContext (cartContext);
+    const context = useContext (CartContext);
 
     let ItemsEnCarrito = context.cart;  
 
