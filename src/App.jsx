@@ -7,8 +7,8 @@ import Error404 from './components/404/404'
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
-import Contacto from './components/Contacto/Contacto'
-import { CartContextProvider } from './components/Context/CartContext'
+import Contacto from './components/Contacto/Contacto';
+import { CartContextProvider } from './components/Context/cartContext'
 import './reset.css'
 
 

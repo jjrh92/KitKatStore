@@ -5,7 +5,7 @@ import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import ItemCount from "../ItemListContainer/ItemCount/ItemCount";
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from './components/Context/cartContext'
 
 const ContenedorPadre = styled ("div") ({
 
