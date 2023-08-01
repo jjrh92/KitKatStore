@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto'
-import { CartContextProvider } from './components/context/CartContext'
+import { CartContextProvider } from './components/Context/CartContext'
 import './reset.css'
 
 
