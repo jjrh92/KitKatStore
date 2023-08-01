@@ -26,7 +26,7 @@ const Marquesina = () => {
         <ContenedorMarquesina>
             <Marquee speed="100">
 
-                <TextoMarquesina>Delivery gratis para compras sobre $25usd.</TextoMarquesina>
+                <TextoMarquesina>Delivery gratis para compras sobre $30usd.</TextoMarquesina>
 
             </Marquee>
         </ContenedorMarquesina>

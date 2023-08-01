@@ -39,8 +39,6 @@ function CartWidget () {
 
         <Button sx={{color: "#F7F0F0",}}><ShoppingCartCheckoutRoundedIcon className="Cart" sx={{fontSize: "4.3125rem"}}/></Button>
 
-
-
         </Link>
 
         <TextoCantidad>

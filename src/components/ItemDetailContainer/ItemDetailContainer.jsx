@@ -40,9 +40,9 @@ const TextoProducto = styled ("h1") ({
 
 const ImagenProducto = styled ("img") ({
 
-    userSelect: "none",
-    width: "60%",
-    height: "60%",
+  userSelect: "none",
+  width: "60%",
+  height: "60%",
     
     
 });

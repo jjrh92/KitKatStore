@@ -96,7 +96,7 @@ function Item (props) {
             <ContenedorImagen>
                 <ImagenProducto draggable="false" src={img} alt={title} />
 
-                <Link title={"Ver más detalles del producto con id: "+id+ "."} draggable="false" style={{fontFamily:"KittyKatt" ,fontSize: "20px", color: ColoresJulioFood.fondo, textDecoration: "none", textAlign: "center", paddingBottom: "7px"}} to={`/product/${id}`}>Ver detalle del producto</Link>
+                <Link title={"Ver más detalles del producto con id: "+id+ "."} draggable="false" style={{fontFamily:"KittyKatt" ,fontSize: "20px", color: ColoresJulioFood.fondo, textDecoration: "none", textAlign: "center", paddingBottom: "7px", paddingTop: "7px"}} to={`/product/${id}`}>Ver detalle del producto</Link>
 
 
             </ContenedorImagen>
