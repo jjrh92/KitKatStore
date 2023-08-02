@@ -22,7 +22,7 @@ function CartContextProvider (props) {
 
           if (item.count >= stock) {
 
-            alert ("Stock superado, Si deseas agregar más de "+ stock +" productos por favor contacta al admin.\nGracias.")
+            alert ("Stock superado para este producto, Si deseas comprar más de "+ stock +" productos por favor contacta al admin.\nGracias.")
             return item;
 
             // Verificacion de cantidad de stock vs cantidad en carrito.
