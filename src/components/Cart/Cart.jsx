@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 import { IconButton } from "@mui/material";
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import BackspaceIcon from '@mui/icons-material/Backspace';
-import { CartContext } from './components/Contexto/cartContexto'
+import { CartContext } from './components/Contexto/CartContexto'
 
 const ContenedorPaginaCart = styled ("div") ({
 

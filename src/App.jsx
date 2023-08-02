@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Banner from './components/Banner/Banner'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto';
-import CartContextProvider from './components/Contexto/cartContexto'
+import { CartContextProvider } from './components/Contexto/CartContexto'
 import './reset.css'
 
 
