@@ -86,8 +86,9 @@ function ProductCard (props) {
       <ContenedorTexts>
         <TituloProducto>{props.title}</TituloProducto>
         <SubTituloProducto>{props.description}</SubTituloProducto>
-        <SubTituloProducto>Cantidad: {props.count} unidades.</SubTituloProducto>
+        <SubTituloProducto>En carrito: {props.count}.</SubTituloProducto>
         <SubTituloProducto>Precio c/u: ${props.price} usd.</SubTituloProducto>
+        <SubTituloProducto>Stock: {props.stock} unidades.</SubTituloProducto>
         <SubTituloProducto>SubTotal: ${CalcularSubtotal (props.count, props.price)} usd.</SubTituloProducto>
       </ContenedorTexts>
 

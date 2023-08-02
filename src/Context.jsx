@@ -5,9 +5,7 @@ function CartContextProvider (props) {
 
   const [cart, setCart] = useState([]);
 
-  function addToCart (product, count) {
-
-    // Revisando si el producto ya existe en el carrito (de antes)
+  function addToCart (product, count, stock) {
 
     const existingItemIndex = cart.findIndex(
 
@@ -22,14 +20,29 @@ function CartContextProvider (props) {
 
         if (index === existingItemIndex) {
 
-          return {
+          if (item.count >= stock) {
 
-            ...item,
-            count: item.count + count,
+            alert ("Stock superado, Si deseas agregar más de "+ stock +" productos por favor contacta al admin.\nGracias.")
+            return item;
 
-          };
+            // Verificacion de cantidad de stock vs cantidad en carrito.
+  
+          }
 
-        } 
+          else {
+
+            return {
+
+            
+              ...item,
+              count: item.count + count,
+  
+            };
+
+          }
+
+        }
+
         
         else {
 
@@ -103,32 +116,6 @@ function CartContextProvider (props) {
 
   }
 
-  // function modifyQuantity (id, count, stock) {
-    
-  //   const newCart = cart.map ((item, index) => {
-
-  //     if (index !== id) {
-
-  //       let newCount = prompt ("Modificar cantidad")
-
-  //       return {
-
-  //         ...item,
-  //         count: item.count + count,
-
-  //       };
-
-  //     } 
-      
-
-  //   });
-
-  //   setCart (newCart);
-
-
-
-  // }
-  
   function getItemId (id) {
     
     let returnedID;
@@ -157,19 +144,6 @@ function CartContextProvider (props) {
 
   }
 
-  function addFromCart (idPasado) {
-
-    const count = cart.findIndex (item => item.id === idPasado);
-
-    if (count !== -1) {
-
-      cart[count].count++;
-      getTotalItemsInCart(count)
-
-    }
-
-  }
-
   return (
 
     <CartContext.Provider
@@ -177,7 +151,6 @@ function CartContextProvider (props) {
         cart,
         addToCart,
         removeFromCart,
-        addFromCart,
         clearCart,
         getTotalItemsInCart,
         getTotalPriceInCart,

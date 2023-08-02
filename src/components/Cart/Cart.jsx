@@ -85,6 +85,7 @@ function Cart () {
     if (context.getTotalItemsInCart() === 0) {
 
         alert ("No hay nada en tu carrito para mostrar.");
+        window.location.href='/';
         
     }
     
@@ -99,7 +100,7 @@ function Cart () {
 
                 {ItemsEnCarrito.map ((props) => {       
                                     
-                    return <ProductCard key={props.id} id={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price} eliminar={() => context.removeFromCart(props.id)} agregar={() => context.addFromCart(props.id)}/>
+                    return <ProductCard stock={props.stock} key={props.id} id={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price} eliminar={() => context.removeFromCart(props.id)} agregar={()=>context.addToCart(props, 1, props.stock)}/>
         
                 })}
 
