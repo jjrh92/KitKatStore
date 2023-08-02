@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
-import getData, {getCategoryData} from "../../services/asyncMock";
 import Item from "../Item/Item";
 import "./ItemList.css";
-import { useParams } from "react-router-dom";
-import Loader from "./Loader";
 
 
 const ContenedorCategoria = styled ("div") ({

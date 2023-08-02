@@ -6,6 +6,7 @@ import { ColoresJulioFood } from "../../Colores";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import ItemCount from "../ItemListContainer/ItemCount/ItemCount";
 import { CartContext } from "../../Context";
+import Loader from "../ItemList/Loader";
 
 const ContenedorPadre = styled ("div") ({
 
@@ -13,7 +14,7 @@ const ContenedorPadre = styled ("div") ({
     flexDirection: "column",
     alignItems: "center",
     userSelect: "none",
-    backgroundColor: "white",
+    backgroundColor: "#F7F0F0",
     
 });
 
@@ -23,7 +24,7 @@ const ContenedorHijo = styled ("div") ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    
+
 });
 
 const TextoProducto = styled ("h1") ({
@@ -41,8 +42,8 @@ const TextoProducto = styled ("h1") ({
 const ImagenProducto = styled ("img") ({
 
   userSelect: "none",
-  width: "60%",
-  height: "60%",
+  width: "40%",
+  height: "40%",
     
     
 });
@@ -51,21 +52,26 @@ function ItemDetailContainer () {
 
   const [product, setProduct] = useState ({});
   const { id } = useParams();
+  const [loaded, setLoaded] = useState (false);
 
   const { addToCart } = useContext (CartContext);
 
   useEffect(() => {
 
     async function requestProduct () {
-
+      setLoaded (false);
       const respuesta = await getProductData (id);
       setProduct (respuesta);
+      setLoaded (true);
 
     }
+
 
     requestProduct ();
 
   }, [id]);
+
+  if (!loaded) return <Loader />
 
   function handleAddToCart (clickCount) {
 
