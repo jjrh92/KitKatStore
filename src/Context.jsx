@@ -5,7 +5,7 @@ function CartContextProvider (props) {
 
   const [cart, setCart] = useState([]);
 
-  function addToCart(product, count) {
+  function addToCart (product, count) {
 
     // Revisando si el producto ya existe en el carrito (de antes)
 
@@ -18,23 +18,28 @@ function CartContextProvider (props) {
     if (existingItemIndex !== -1) {
 
       // Si existe el producto de antes, actualiza la cantidad) 
-      const newCart = cart.map((item, index) => {
+      const newCart = cart.map ((item, index) => {
 
         if (index === existingItemIndex) {
+
           return {
+
             ...item,
             count: item.count + count,
+
           };
+
         } 
         
         else {
+
           return item;
 
         }
 
       });
   
-      setCart(newCart);
+      setCart (newCart);
 
     } 
     
@@ -43,7 +48,7 @@ function CartContextProvider (props) {
       // El Producto no existe en el carrito, agregalo como un nuevo item. 
       const newItemInCart = { count, ...product };
       const newCart = [...cart, newItemInCart];
-      setCart(newCart);
+      setCart (newCart);
 
     }
     
@@ -98,16 +103,70 @@ function CartContextProvider (props) {
 
   }
 
-  function getItem (id) {
+  // function modifyQuantity (id, count, stock) {
+    
+  //   const newCart = cart.map ((item, index) => {
 
-    return cart [0];
+  //     if (index !== id) {
+
+  //       let newCount = prompt ("Modificar cantidad")
+
+  //       return {
+
+  //         ...item,
+  //         count: item.count + count,
+
+  //       };
+
+  //     } 
+      
+
+  //   });
+
+  //   setCart (newCart);
+
+
+
+  // }
+  
+  function getItemId (id) {
+    
+    let returnedID;
+    return returnedID = console.log ("Has clickeado el producto con el id "+id);
 
   }
 
-  
-  function removeItem (id) {
+  function removeFromCart (id) {
 
+    setCart((cart) =>
 
+        cart.map(item => item.id === id ?
+            ({
+                ...item,
+                qty: item.qty - 1
+            }) :
+            item
+        ).filter(item => {
+            return item.id === id ?
+                item.qty > 0 :
+                true
+        })
+    );
+
+    alert ("Se han eliminado del carrito los items solicitados.")
+
+  }
+
+  function addFromCart (idPasado) {
+
+    const count = cart.findIndex (item => item.id === idPasado);
+
+    if (count !== -1) {
+
+      cart[count].count++;
+      getTotalItemsInCart(count)
+
+    }
 
   }
 
@@ -117,11 +176,13 @@ function CartContextProvider (props) {
       value={{
         cart,
         addToCart,
-        removeItem,
+        removeFromCart,
+        addFromCart,
         clearCart,
         getTotalItemsInCart,
         getTotalPriceInCart,
         getItemTitleInCart,
+        getItemId,
       }}
     >
       {props.children}

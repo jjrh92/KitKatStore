@@ -2,8 +2,8 @@ import React from 'react'
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import { IconButton } from "@mui/material";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 const ContenedorProducts = styled ("div") ({
 
@@ -11,7 +11,7 @@ const ContenedorProducts = styled ("div") ({
   backgroundColor: ColoresJulioFood.fondo,
   padding: "1rem",
   margin: "1rem",
-  width: "600px",
+  width: "500px",
   userSelect: "none",
   border: "2px solid",
   borderColor: ColoresJulioFood.hover,
@@ -32,8 +32,8 @@ const ContenedorTexts = styled ("div") ({
 
 const ImagenProducts = styled ("img") ({
 
-  height: "150px",
-  width: "150px",
+  height: "200px",
+  width: "200px",
   border: "2px solid",
   borderColor: ColoresJulioFood.hover,
   borderRadius: "10px",
@@ -65,8 +65,6 @@ const ContenedorButtons = styled ("div") ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "end",
-  gap: "50px",
-  width: "100vh",
   marginLeft: "5px",
 
 });
@@ -95,12 +93,12 @@ function ProductCard (props) {
 
       <ContenedorButtons>
 
-        <IconButton variant="text" sx={{cursor:"unset", color: "#F7F0F0",}} title={props.id}>
-          <AddShoppingCartIcon/>
-        </IconButton>
+      <IconButton onClick={props.agregar} title={"Agregar más del mismo producto al carrito"} variant="text" sx={{cursor:"unset", color: "#F7F0F0",}}>
+        <AddShoppingCartIcon sx={{fontSize: "4rem",}} />
+      </IconButton>
 
-        <IconButton onClick={props.eliminar} title={props.id} variant="text" sx={{cursor:"unset", color: "#F7F0F0",}}>
-          <RemoveShoppingCartIcon />
+        <IconButton onClick={props.eliminar} title={"Eliminar productos del carrito"} variant="text" sx={{cursor:"unset", color: "#F7F0F0",}}>
+          <DeleteForeverIcon sx={{fontSize: "4rem",}} />
         </IconButton>
 
       </ContenedorButtons>

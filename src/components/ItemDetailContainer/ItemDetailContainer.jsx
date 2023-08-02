@@ -71,7 +71,6 @@ function ItemDetailContainer () {
 
     addToCart (product, clickCount);
     alert (`Producto agregado al carrito, cantidad: ${clickCount}`);
-    console.log ("Producto agregado:" ,product, "\nCantidad:" ,clickCount)
 
   }
 

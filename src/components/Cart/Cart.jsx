@@ -99,11 +99,11 @@ function Cart () {
 
                 {ItemsEnCarrito.map ((props) => {       
                                     
-                    return <ProductCard key={props.id} id={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price} eliminar={context.removeItem(props.id)}/>
-            
+                    return <ProductCard key={props.id} id={props.id} img={props.img} title={props.title} description={props.description} count={props.count} price={props.price} eliminar={() => context.removeFromCart(props.id)} agregar={() => context.addFromCart(props.id)}/>
+        
                 })}
 
-                <TextoCart>{CalcularDelivery()}</TextoCart>
+                <div>{CalcularDelivery()}</div>
 
 
                 <ContenedorButtons>
