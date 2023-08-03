@@ -3,7 +3,6 @@ import { ColoresJulioFood } from "../../Colores";
 import Item from "../Item/Item";
 import "./ItemList.css";
 
-
 const ContenedorCategoria = styled ("div") ({
 
     display: "flex",

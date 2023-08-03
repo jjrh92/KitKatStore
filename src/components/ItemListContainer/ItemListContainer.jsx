@@ -23,7 +23,6 @@ const ItemListContainer = () => {
     
         }
 
-
         requestProducts ();
     
     }, [categoryId]);

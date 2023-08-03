@@ -51,6 +51,7 @@ const ImagenProducto = styled ("img") ({
 function ItemDetailContainer () {
 
   const [product, setProduct] = useState ({});
+  const [isAddedToCart, setIsAddedToCart] = useState (false);
   const { id } = useParams();
   const [loaded, setLoaded] = useState (false);
 
@@ -77,6 +78,7 @@ function ItemDetailContainer () {
 
     addToCart (product, clickCount);
     alert (`Producto agregado al carrito, cantidad: ${clickCount}`);
+    setIsAddedToCart (true);
 
   }
 
@@ -91,13 +93,16 @@ function ItemDetailContainer () {
 
         <ContenedorHijo>
             <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
-            <ItemCount stock={product.stock} onConfirm={handleAddToCart} /> 
+            {
+              isAddedToCart ? <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon sx={{fontSize: "50px",}} className="Cart"/></Link> : <ItemCount stock={product.stock} onConfirm={handleAddToCart} /> 
+            }
+
             {/* Aca ocurre la magia */}
         </ContenedorHijo>
 
         <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>
 
-        <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Terminar mi Compra<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link>
+        {/* <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link> */}
 
         <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
 

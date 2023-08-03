@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import ProductCard from './ProductCard';
 import { IconButton } from "@mui/material";
-import DoneAllIcon from '@mui/icons-material/DoneAll';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import { CartContext } from "../../Context";
 
@@ -13,6 +13,7 @@ const ContenedorPaginaCart = styled ("div") ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "start",
     userSelect: "none",
     backgroundColor: ColoresJulioFood.textos,
     height: "100%",
@@ -37,11 +38,17 @@ const ContenedorButtons = styled ("div") ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "end",
-    gap: "50px",
-    width: "100vh",
-    marginLeft: "5px",
+    gap: "70px",
   
   });
+
+const ImagenError = styled ("img") ({
+    
+    marginTop: "30px",
+    width: "400px",
+    height: "400px",
+    
+});
 
 
 function Cart () {
@@ -56,14 +63,13 @@ function Cart () {
 
         if (context.getTotalPriceInCart() > 30) {
 
-            return <TextoCart>Valor Final Carrito: (Delivery Gratis) = ${context.getTotalPriceInCart()} usd.</TextoCart>
+            return <TextoCart sx={{color: ColoresJulioFood.hover}}>Valor Final Carrito: (Delivery Gratis) = ${context.getTotalPriceInCart()} usd.</TextoCart>
 
         }
 
         else {
-
-            return <TextoCart>Valor Final Carrito: (+Delivery $7usd) = ${context.getTotalPriceInCart() + deliveryFee} usd.</TextoCart>
-
+            
+            return <TextoCart>Valor Final Carrito: *Delivery +$7usd* = ${context.getTotalPriceInCart() + deliveryFee} usd.</TextoCart>
 
         }
 
@@ -75,7 +81,7 @@ function Cart () {
         let cantidadItems = context.getTotalItemsInCart ();
         let nombresItems = context.getItemTitleInCart ();
 
-        alert ("Despachamos: x"+cantidadItems+ " (" +nombresItems+").\nGracias por tu compra.\nVolviendo al Indice");
+        alert ("Despachamos a tu hogar: x"+cantidadItems+ " (" +nombresItems+").\nGracias por su compra.\nVuelva prontos.!");
         window.location.href='/';
 
     }
@@ -84,8 +90,7 @@ function Cart () {
 
     if (context.getTotalItemsInCart() === 0) {
 
-        alert ("No hay nada en tu carrito para mostrar.");
-        window.location.href='/';
+        return <ContenedorPaginaCart><TextoCart>No hay nada en tu carrito para mostrar.</TextoCart><ImagenError draggable="false" src='https://www.adasglobal.com/img/empty-cart.png'/><Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "20px", paddingTop: "20px",}} to={"/"}>Volver al Catalogo</Link></ContenedorPaginaCart>
         
     }
     
@@ -109,19 +114,19 @@ function Cart () {
 
                 <ContenedorButtons>
 
-                    <IconButton onClick={TerminarCompra} variant="text" sx={{cursor:"unset", color: ColoresJulioFood.hover,}} title="Procesar Compra">
-                        <TextoCart sx={{color: ColoresJulioFood.hover}}>Terminar Compra:</TextoCart>
-                        <DoneAllIcon/> 
+                    <IconButton onClick={TerminarCompra} variant="text" sx={{color: "purple",}} title="Procesar Compra">
+                        <TextoCart sx={{color: "purple"}}>Procesar Compra:</TextoCart>
+                        <LocalShippingIcon sx={{fontSize: "40px",}}/> 
                     </IconButton>
 
-                    <IconButton onClick={context.clearCart} variant="text" sx={{cursor:"unset", color: ColoresJulioFood.fondo,}} title="Borrar todos los productos del Carrito">
+                    <IconButton onClick={context.clearCart} variant="text" sx={{color: ColoresJulioFood.fondo,}} title="Borrar todos los productos del Carrito">
                         <TextoCart>Borrar Todo:</TextoCart>
                         <BackspaceIcon/> 
                     </IconButton>
 
                 </ContenedorButtons>
 
-                <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.fondo, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "20px", paddingTop: "20px",}} to={"/"}>Volver al Catalogo</Link>
+                <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "20px", paddingTop: "20px",}} to={"/"}>Volver al Catalogo</Link>
 
             </ContenedorPaginaCart>
 
