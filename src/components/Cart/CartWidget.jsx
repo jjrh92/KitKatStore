@@ -20,17 +20,36 @@ const WidgetContainer = styled ("div") ({
 const TextoCantidad = styled ("span") ({
 
     color: ColoresJulioFood.textos,
-    fontSize: "1rem",
+    fontSize: "2rem",
     fontFamily: "KittyKatt",
     display: "flex",
-    justifyContent: "center",
+    alignSelf: "center",
     userSelect: "none",
 
 });
 
+function CondicionarCarrito () {
+  
+  const context = useContext (CartContext);
+  let cantidad = context.getTotalItemsInCart ();
+
+  if ( cantidad == 0) {
+
+    return null;
+
+  } 
+
+  else {
+
+    {return context.getTotalItemsInCart()}
+
+  }
+
+}
+
 function CartWidget () {
 
-  const context = useContext (CartContext);
+
 
   return (
 
@@ -44,7 +63,7 @@ function CartWidget () {
 
         <TextoCantidad>
 
-        {context.getTotalItemsInCart()}
+        {CondicionarCarrito()}
 
         </TextoCantidad>
 
