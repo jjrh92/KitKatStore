@@ -117,7 +117,7 @@ function CallSendButton () {
   const SendButton = document.createElement ("button");
   SendButton.setAttribute ("id", "SendButton");
   SendButton.setAttribute ("type", "submit");
-  SendButton.setAttribute ("style", "font-size: 30px; background-color: #F7F0F0; border: 2px solid; border-color: yellowgreen; border-radius: 10px; color: yellowgreen; cursor: pointer; margin-bottom: 20px; margin-top: 10px");
+  SendButton.setAttribute ("style", "padding: 1rem; font-family: KittyKatt;font-size: 20px; background-color: #F7F0F0; border: 2px solid; border-color: yellowgreen; border-radius: 10px; color: yellowgreen; cursor: pointer; margin-bottom: 20px; margin-top: 10px;",);
   SendButton.textContent = "Send";
   Container.removeChild (Captcha);
   Container.append (SendButton);

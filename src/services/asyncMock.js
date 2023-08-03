@@ -2,8 +2,8 @@ const products = [
 
     {
         id: 1,
-        title: "Duos",
-        description: "Strawberyy + Dark Chocolate.",
+        title: "KitKat Duos",
+        description: "Sabores: Strawberyy + Dark Chocolate",
         stock: 11,
         price: 2,
         img: "https://thecandyland.cl/wp-content/uploads/2022/06/KITKATDUOSSTRAWBERRYDARKCHOCOLATE42G.jpg",
@@ -13,7 +13,7 @@ const products = [
     {
         id: 2,
         title: "Birthday Cake Flavour",
-        description: "Birthday Creme.",
+        description: "Birthday Creme",
         stock: 12,
         price: 5,
         img: "https://thecandyland.cl/wp-content/uploads/2021/01/Kitkat-cke.jpg",
