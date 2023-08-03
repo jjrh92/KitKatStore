@@ -26,13 +26,6 @@ const firebaseConfig = {
 const appFirebase = initializeApp(firebaseConfig);
 const db = getFirestore(appFirebase);
 
-// Implementar getData 
-// Implementar getProductData 
-// Implementar getCategoryData
-
-const productsRef = collection (db, "products");
-const documentsSnapshot = await getDocs (productsRef);
-
 // Fin Firestore
 
 function App() {
