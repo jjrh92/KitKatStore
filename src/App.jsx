@@ -13,7 +13,7 @@ import './reset.css'
 
 // Inicio Firestore
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore'
+import { getFirestore, collection, getDocs } from 'firebase/firestore'
 const firebaseConfig = {
   apiKey: "AIzaSyC3Zmzh5oSaGK8fgh_fWaRQqUUuhHHtEqc",
   authDomain: "kitkatscript-f686a.firebaseapp.com",
@@ -25,7 +25,14 @@ const firebaseConfig = {
 
 const appFirebase = initializeApp(firebaseConfig);
 const db = getFirestore(appFirebase);
-console.log ("firestore", db);
+
+// Implementar getData 
+// Implementar getProductData 
+// Implementar getCategoryData
+
+const productsRef = collection (db, "products");
+const documentsSnapshot = await getDocs (productsRef);
+
 // Fin Firestore
 
 function App() {
