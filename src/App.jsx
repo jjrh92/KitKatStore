@@ -11,23 +11,6 @@ import Contacto from './components/Contacto/Contacto';
 import { CartContextProvider } from './Context'
 import './reset.css'
 
-// Inicio Firestore
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
-const firebaseConfig = {
-  apiKey: "AIzaSyC3Zmzh5oSaGK8fgh_fWaRQqUUuhHHtEqc",
-  authDomain: "kitkatscript-f686a.firebaseapp.com",
-  projectId: "kitkatscript-f686a",
-  storageBucket: "kitkatscript-f686a.appspot.com",
-  messagingSenderId: "19613731408",
-  appId: "1:19613731408:web:d4e77d5afcc08ffe3ddf55"
-};
-
-const appFirebase = initializeApp(firebaseConfig);
-const db = getFirestore(appFirebase);
-
-// Fin Firestore
-
 function App() {
 
   return (

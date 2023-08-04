@@ -23,7 +23,7 @@ const products = [
     {
         id: 3,
         title: "Duos",
-        description: "Mint + Dark Chocolate.",
+        description: "Mint + Dark Chocolate",
         stock: 13,
         price: 3,
         img: "https://thecandyland.cl/wp-content/uploads/2020/10/KIT-KAT-DUOS-MINTDARK-CHOCOLATE.jpg",
