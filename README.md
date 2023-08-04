@@ -16,7 +16,7 @@
 <h3 align="center">Welcome - Bienvenid@</h3>
 
   <p align=center">
-    JulioFood - KitKat selling website
+    JulioFood (KitKatScript) - KitKat selling website - Ecommerce de venta de KitKats
     <br />
     <br />
     <a href="https://julio-food.vercel.app/">View Demo - Ver Demo</a>
@@ -39,7 +39,7 @@ ReactJS E-commerce Project . - Proyecto E-commerce basado en ReactJS.
 Built With <img src="https://media0.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="30px"> Hecho Con
 </h1>
 
-ReactJS, MaterialUI.
+ReactJS, SwiperJS, ReactFastMarquee, MaterialUI.
 
 <!-- GETTING STARTED -->
 <h1 align="center"> 
@@ -52,6 +52,8 @@ Clone the repo and execute npm install from your vscode
    ```sh
    git clone https://github.com/jjrh92/JulioFood.git
    ```
+
+Or just simply click on the Demo link above - O simplemente clicka en el link de Demo de arriba. 
 
 <!-- USAGE EXAMPLES -->
 <h1 align="center"> 
