@@ -105,8 +105,8 @@ const AfterClickContainer = styled ("section") ({
 
 const IconoImagen = styled ("img") ({
 
-  width: "200px",
-  height: "200px",
+  width: "700px",
+  height: "700px",
 
 });
 
@@ -118,7 +118,7 @@ function CallSendButton () {
   SendButton.setAttribute ("id", "SendButton");
   SendButton.setAttribute ("type", "submit");
   SendButton.setAttribute ("style", "padding: 1rem; font-family: KittyKatt;font-size: 20px; background-color: #F7F0F0; border: 2px solid; border-color: yellowgreen; border-radius: 10px; color: yellowgreen; cursor: pointer; margin-bottom: 20px; margin-top: 10px;",);
-  SendButton.textContent = "Send";
+  SendButton.textContent = "Enviar Formulario";
   Container.removeChild (Captcha);
   Container.append (SendButton);
   const ChangeText = document.querySelector (".TextChange");
@@ -136,11 +136,10 @@ function FormularioContacto () {
     return (
 
       <AfterClickContainer>
-        <Text>Gracias por tu mensaje, pronto respondere tu mensaje. Atte, Julio.</Text>
-          <IconoImagen alt='Mensaje enviado correctamente' draggable="false" src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Eo_circle_green_checkmark.svg'/>
+        <Text>Muchas Gracias, pronto respondere tu mensaje. Atte, Julio.</Text>
+          <IconoImagen alt='Mensaje enviado correctamente' draggable="false" src='https://static.startuptalky.com/2021/09/KitKat-Marketing-strategy-StartupTalky.jpg'/>
 
-        <Link title="Home" draggable="false" style={{fontSize: "20px", fontWeight: "bold", textDecoration: "none", color: ColoresJulioFood.textos,}} to="/">Volver a la pagina principal</Link>
-        <Link title="Refresh" draggable="false" style={{fontSize: "20px", fontWeight: "bold", textDecoration: "none", color: ColoresJulioFood.textos,}} onClick={location.reload}>Or refrescar esta pagina</Link>
+        <Link title="Refresh" draggable="false" style={{fontSize: "20px", fontWeight: "bold", textDecoration: "none", color: ColoresJulioFood.textos,}} onClick={location.reload}>Recargar esta pagina</Link>
       </AfterClickContainer>
 
     )

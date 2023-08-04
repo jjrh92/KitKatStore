@@ -40,7 +40,6 @@ const Banner = () => {
                 <SwiperSlide><ImagenBanner src='https://d2z2mkwk6fkehh.cloudfront.net/f2me/blog/How%20to%20Buy%20Kit%20Kats%20online%20from%20japan%20and%20ship%20internationally/KitKat1.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://media.timeout.com/images/105265680/image.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://people.com/thmb/XKlXJApM-YfnDZmokle22q-LhPo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(629x499:631x501)/KIT-KAT-Blueberry-Muffin-1-7b058562758640d1ad5cf5aad55fdda7.jpg' alt='Imagen banner'/></SwiperSlide>
-                <SwiperSlide><ImagenBanner src='https://www.umami-insider.com/asset/uploads/Japans-Love-of-Kit-Kat-Bars-300-Flavors.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://images.squarespace-cdn.com/content/v1/5c99011c77b9037f574a56be/1613079869526-XJ55HAX5G1QW62H3NL30/KitKatScroll_Images-01.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://www.tastingtable.com/img/gallery/23-kit-kat-flavors-ranked/l-intro-1674501411.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://www.mashed.com/img/gallery/the-international-kit-kat-flavor-30-of-fans-want-to-try-the-most/l-intro-1626629362.jpg' alt='Imagen banner'/></SwiperSlide>
