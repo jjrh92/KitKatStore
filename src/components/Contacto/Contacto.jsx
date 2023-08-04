@@ -26,9 +26,6 @@ const TextoContacto = styled ("h1") ({
 
 });
 
-
-
-
 function Contacto () {
 
     return (
@@ -39,7 +36,7 @@ function Contacto () {
             <TextoContacto>Usalo para pedir al admin que agregue algun producto especifico ó enviale un saludo.</TextoContacto>
             <TextoContacto className='TextChange'>Filtro AntiSpam: Por favor resolver el CAPTCHA y habilitaremos el boton de envio.</TextoContacto>
             <FormularioContacto/>
-            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
+            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px", paddingTop: "15px",}} to={"/"}>Volver al Home</Link>
 
         </ContenedorPaginaContacto>
 

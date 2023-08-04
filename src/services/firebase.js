@@ -1,6 +1,6 @@
 // 1. Inicio Firestore
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, doc, getDoc, where, query } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyC3Zmzh5oSaGK8fgh_fWaRQqUUuhHHtEqc",
@@ -18,27 +18,50 @@ const db = getFirestore(appFirebase);
 
 async function getData () {
 
-  const productsRef = collection(db, "products");
+  const productsRef = collection (db, "products");
   const documentsSnapshot = await getDocs (productsRef);
   const documents = documentsSnapshot.docs;
-  const docsData = documents.map (item => { return { ...item.data(), id: item.id }}
-  
-  // {
-  // let productFullData = item.data();
-  // productFullData.id = item.id;
-  // return productFullData;
-  // }
-
-  );
-
+  const docsData = documents.map (item => { return { ...item.data(), id: item.id }});
   return (docsData);
 
 }
 
-
-export { getData };
-
 // 3. Implementar getProductData
+
+async function getProductData (id) {
+
+    const docRef = doc (db, "products", id);
+    const docSnapshot = await getDoc (docRef);
+
+    if (docSnapshot.exists()) {
+
+        return {...docSnapshot.data(), id: docSnapshot.id};
+
+    }
+
+    else {
+
+        throw new Error ("No se encontró tal producto.");
+
+    }
+
+
+}
+
+
 // 4. Implementar getCaterogyData
 
-// Fin Firestore
+async function getCategoryData (id) {
+
+    const productsRef = collection (db, "products");
+    const q = query (productsRef, where ("category", "==", id));
+
+    const documentsSnapshot = await getDocs (q);
+    const documents = documentsSnapshot.docs;
+    const docsData = documents.map (item => { return { ...item.data(), id: item.id }});
+    return (docsData);
+
+
+}
+
+export { getData, getProductData, getCategoryData };

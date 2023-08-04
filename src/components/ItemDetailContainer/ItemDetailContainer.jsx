@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { getProductData } from "../../services/asyncMock";
+import { getProductData } from "../../services/firebase";
 import { Link, useParams } from "react-router-dom";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
@@ -60,6 +60,7 @@ function ItemDetailContainer () {
   useEffect(() => {
 
     async function requestProduct () {
+      
       setLoaded (false);
       const respuesta = await getProductData (id);
       setProduct (respuesta);
