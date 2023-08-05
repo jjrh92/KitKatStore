@@ -22,7 +22,18 @@ async function getData () {
   const documentsSnapshot = await getDocs (productsRef);
   const documents = documentsSnapshot.docs;
   const docsData = documents.map (item => { return { ...item.data(), id: item.id }});
-  return (docsData);
+
+  if (docsData.length === 0) {
+
+    throw new Error ("No hay nada para mostrar")
+
+  }
+
+  else {
+
+    return (docsData);
+
+  }
 
 }
 
@@ -33,34 +44,43 @@ async function getProductData (id) {
     const docRef = doc (db, "products", id);
     const docSnapshot = await getDoc (docRef);
 
-    if (docSnapshot.exists()) {
+    if (docSnapshot.exists ()) {
 
-        return {...docSnapshot.data(), id: docSnapshot.id};
+      return {...docSnapshot.data(), id: docSnapshot.id};
 
     }
 
     else {
 
-        throw new Error ("No se encontró tal producto.");
+      throw new Error ("No se encontró tal producto.");
 
     }
 
 
 }
 
-
 // 4. Implementar getCaterogyData
 
 async function getCategoryData (id) {
 
-    const productsRef = collection (db, "products");
-    const q = query (productsRef, where ("category", "==", id));
+  const productsRef = collection (db, "products");
+  const q = query (productsRef, where ("category", "==", id));
 
-    const documentsSnapshot = await getDocs (q);
-    const documents = documentsSnapshot.docs;
-    const docsData = documents.map (item => { return { ...item.data(), id: item.id }});
+  const documentsSnapshot = await getDocs (q);
+  const documents = documentsSnapshot.docs;
+  const docsData = documents.map (item => { return { ...item.data(), id: item.id }});
+
+  if (docsData.length === 0) {
+
+    throw new Error ("No hay nada para mostrar")
+
+  }
+
+  else {
+
     return (docsData);
 
+  }
 
 }
 

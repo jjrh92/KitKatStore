@@ -69,9 +69,9 @@ function CartContextProvider (props) {
 
   function clearCart () {
 
-    window.location.href='/';
     alert ("Tu carrito ha sido limpiado correctamente.");
-    
+    setCart ([]);
+  
   }
 
   function getTotalItemsInCart () {
@@ -116,13 +116,6 @@ function CartContextProvider (props) {
 
   }
 
-  function getItemId (id) {
-    
-    let returnedID;
-    return returnedID = console.log ("Has clickeado el producto con el id "+id);
-
-  }
-
   function removeFromCart (id) {
 
     setCart((cart) =>
@@ -155,7 +148,6 @@ function CartContextProvider (props) {
         getTotalItemsInCart,
         getTotalPriceInCart,
         getItemTitleInCart,
-        getItemId,
       }}
     >
       {props.children}

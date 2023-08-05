@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { getProductData } from "../../services/firebase";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { styled } from '@mui/system';
 import { ColoresJulioFood } from "../../Colores";
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
@@ -54,20 +54,39 @@ function ItemDetailContainer () {
   const [isAddedToCart, setIsAddedToCart] = useState (false);
   const { id } = useParams();
   const [loaded, setLoaded] = useState (false);
-
+  const [errorsText, setErrorsText] = useState (null);
   const { addToCart } = useContext (CartContext);
+  const navigate = useNavigate ();
 
-  useEffect(() => {
+  useEffect (() => {
 
     async function requestProduct () {
       
       setLoaded (false);
-      const respuesta = await getProductData (id);
-      setProduct (respuesta);
-      setLoaded (true);
+
+      try {
+
+        const respuesta = await getProductData (id);
+        setProduct (respuesta);
+        setLoaded (true);
+
+      }
+
+      catch (error) {
+
+        setErrorsText (error.message)
+        setLoaded (true);
+        navigate ("/404")
+
+      }
+
+      finally {
+
+        setLoaded (true);
+
+      }
 
     }
-
 
     requestProduct ();
 
@@ -83,33 +102,49 @@ function ItemDetailContainer () {
 
   }
 
-  return (
+  if (errorsText) {
 
-    <ContenedorPadre>
+    return (
+      
+      navigate ("/404")
 
-        <ContenedorHijo>
-            <TextoProducto>Viendo vista detallada del Producto: {product.title}</TextoProducto>
-            <ImagenProducto draggable="false" src={product.img} alt="Imagen" />
-        </ContenedorHijo>
+    );
 
-        <ContenedorHijo>
-            <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
-            {
-              isAddedToCart ? <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon sx={{fontSize: "50px",}} className="Cart"/></Link> : <ItemCount stock={product.stock} onConfirm={handleAddToCart} /> 
-            }
+  }
 
-            {/* Aca ocurre la magia */}
-        </ContenedorHijo>
+  else {
 
-        <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>
+    return (
 
-        {/* <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link> */}
+      <ContenedorPadre>
+  
+          <ContenedorHijo>
+              <TextoProducto>Viendo vista detallada del Producto: {product.title}</TextoProducto>
+              <ImagenProducto draggable="false" src={product.img} alt="Imagen" />
+          </ContenedorHijo>
+  
+          <ContenedorHijo>
+              <TextoProducto>{product.description} | Precio ${product.price} usd.</TextoProducto>
+              {
+                isAddedToCart ? <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon sx={{fontSize: "50px",}} className="Cart"/></Link> : <ItemCount stock={product.stock} onConfirm={handleAddToCart} /> 
+              }
+  
+              {/* Aca ocurre la magia */}
+          </ContenedorHijo>
+  
+          <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>
+  
+          {/* <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link> */}
+  
+          <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
+  
+      </ContenedorPadre>
+  
+    );
 
-        <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
+  }
 
-    </ContenedorPadre>
 
-  );
 }
 
 export default ItemDetailContainer;

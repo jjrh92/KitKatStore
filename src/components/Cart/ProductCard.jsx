@@ -69,7 +69,6 @@ const ContenedorButtons = styled ("div") ({
 
 });
 
-
 function ProductCard (props) {
 
   function CalcularSubtotal (a,b) {

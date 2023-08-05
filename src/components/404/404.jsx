@@ -8,7 +8,7 @@ const ContenedorPaginaError = styled ("div") ({
     flexDirection: "column",
     alignItems: "center",
     userSelect: "none",
-    backgroundColor: ColoresJulioFood.textos,
+    backgroundColor: "white",
     
 });
 
@@ -27,20 +27,23 @@ const TextoError = styled ("h1") ({
 
 const ImagenError = styled ("img") ({
 
+    display: "flex",
 
 });
 
 
 function Error404 () {
 
+    console.log ("El recurso que has intentado acceder no existe.");
+
     return (
 
         <ContenedorPaginaError>
 
-
             <TextoError>Error 404 - Page Not Found</TextoError>
-            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
-            <ImagenError draggable="false" src='https://images7.memedroid.com/images/UPLOADED757/62cfe6d215e26.webp'></ImagenError>
+   
+            <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt",}} to={"/"}>Volver al Home</Link>
+            <ImagenError draggable="false" src='https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif'></ImagenError>
 
         </ContenedorPaginaError>
 
