@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import "../Cart/CartWidget.css";
 import { CartContext } from "../../Context";
 
-
 const WidgetContainer = styled ("div") ({
 
 
@@ -68,7 +67,6 @@ function CartWidget () {
         </TextoCantidad>
 
     </WidgetContainer>
-
 
   );
 

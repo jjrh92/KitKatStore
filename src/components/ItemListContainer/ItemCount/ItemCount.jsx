@@ -48,13 +48,11 @@ function ItemCount (props) {
 
       setClickCount (clickCount - 1);
 
-
     }
 
   }
 
   return (
-
 
     <ContenedorBotones>
         <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={handleClickAdd}>
@@ -71,7 +69,6 @@ function ItemCount (props) {
             <RemoveIcon />
 
         </IconButton>
-
 
     </ContenedorBotones>
 

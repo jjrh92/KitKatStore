@@ -42,7 +42,7 @@ const Banner = () => {
                 <SwiperSlide><ImagenBanner src='https://people.com/thmb/XKlXJApM-YfnDZmokle22q-LhPo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(629x499:631x501)/KIT-KAT-Blueberry-Muffin-1-7b058562758640d1ad5cf5aad55fdda7.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://images.squarespace-cdn.com/content/v1/5c99011c77b9037f574a56be/1613079869526-XJ55HAX5G1QW62H3NL30/KitKatScroll_Images-01.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://www.tastingtable.com/img/gallery/23-kit-kat-flavors-ranked/l-intro-1674501411.jpg' alt='Imagen banner'/></SwiperSlide>
-                <SwiperSlide><ImagenBanner src='https://www.mashed.com/img/gallery/the-international-kit-kat-flavor-30-of-fans-want-to-try-the-most/l-intro-1626629362.jpg' alt='Imagen banner'/></SwiperSlide>
+
                 <SwiperSlide><ImagenBanner src='https://soranews24.com/wp-content/uploads/sites/3/2019/04/japanese-kitkats-mint-chocolate-get-fresh-with-new-peach-mint-flavour-this-summer-japan-chocolates-top.jpg' alt='Imagen banner'/></SwiperSlide>
                 <SwiperSlide><ImagenBanner src='https://munchtimeexotics.com/cdn/shop/files/KitKatPeachBag.jpg?v=1687830460&width=1946'/></SwiperSlide>
 

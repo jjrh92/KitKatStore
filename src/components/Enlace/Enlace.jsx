@@ -1,13 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ColoresJulioFood } from "../../Colores";
-import "../Enlace/Enlace.css";
 
 const Enlace = (props) => {
         
     return (
 
-        <Link className="Enlace" draggable="false" style={{fontSize: "40px", color: ColoresJulioFood.textos, textDecoration: "none",}} to={props.Ruta}>{props.Texto}</Link>
+        <nav id="Enlace">
+           
+            <NavLink to={props.Ruta} style={({ isActive, }) => {
+                
+                return {fontSize: isActive ? "40px" : "40px", color: isActive ? ColoresJulioFood.hover : ColoresJulioFood.textos, textDecoration: isActive ? "none" : "none",}}}>
+                    
+                    {props.Texto}
+                
+            </NavLink>
+
+        </nav>
 
     );
 

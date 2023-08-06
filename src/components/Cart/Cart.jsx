@@ -61,8 +61,6 @@ function Cart () {
     let ItemsEnCarrito = context.cart;  
 
     const { cart, clearCartQuietly } = useContext (CartContext);
-
-    // 1. Creando nuestro objeto orden de compra
   
     async function handleCheckout () {
 
@@ -149,7 +147,6 @@ function Cart () {
             return <TextoCart>Valor Final Carrito: *Delivery +$7usd* = ${context.getTotalPriceInCart() + deliveryFee} usd.</TextoCart>
 
         }
-
 
     }
 

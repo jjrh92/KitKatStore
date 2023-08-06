@@ -34,8 +34,6 @@ const ImagenError = styled ("img") ({
 
 function Error404 () {
 
-    console.log ("El recurso que has intentado acceder no existe.");
-
     return (
 
         <ContenedorPaginaError>

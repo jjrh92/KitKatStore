@@ -140,7 +140,6 @@ function ItemDetailContainer () {
                 isAddedToCart ? <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon sx={{fontSize: "50px",}} className="Cart"/></Link> : <ItemCount stock={product.stock} onConfirm={handleAddToCart} /> 
               }
   
-              {/* Aca ocurre la magia */}
           </ContenedorHijo>
   
           <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>

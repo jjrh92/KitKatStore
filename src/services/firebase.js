@@ -1,4 +1,3 @@
-// 1. Inicio Firestore
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, doc, getDoc, where, query, addDoc } from 'firebase/firestore'
 
@@ -13,8 +12,6 @@ const firebaseConfig = {
 
 const appFirebase = initializeApp(firebaseConfig);
 const db = getFirestore(appFirebase);
-
-// 2. Implementar async function getData;
 
 async function getData () {
 
@@ -37,8 +34,6 @@ async function getData () {
 
 }
 
-// 3. Implementar getProductData
-
 async function getProductData (id) {
 
     const docRef = doc (db, "products", id);
@@ -59,7 +54,6 @@ async function getProductData (id) {
 
 }
 
-// 4. Implementar getCaterogyData
 
 async function getCategoryData (id) {
 
