@@ -60,7 +60,7 @@ Or just simply click on the Demo link above - O simplemente clicka en el link de
 Usage <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2lvcWx2Ynpia3BjYnk3Yzlvdmw1cnBjdHI3cm5uY3QzenM1enNibiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/igPDtkfSJZMFwE0LP8/giphy.gif" width="30px"> Uso
 </h1>
 
-REACT. 
+This project is an E-commerce simulation, you can buy any of the products available, you can contact me if you want me to add an specific product. - Este es un proyecto de simulacion de E-commerce, puedes comprar cualquiera de los productos disponibles y me puedes contactar si quieres que agregue algun producto en especifico.
 
 
 <!-- CONTRIBUTING -->

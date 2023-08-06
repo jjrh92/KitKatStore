@@ -6,7 +6,7 @@ const ContenedorItem = styled ("div") ({
 
     display: "flex",
     flexDirection: "row",
-    border: "2px solid",
+    border: "4px solid",
     borderColor: ColoresJulioFood.hover,
     borderRadius: "10px",
     backgroundColor: "white",

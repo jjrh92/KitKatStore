@@ -70,21 +70,30 @@ function Cart () {
             title: 'Ingrese su nombre',
             input: 'text',
             inputLabel: 'Su Nombre para la factura',
-            inputPlaceholder: 'Julio Reyes'
+            inputPlaceholder: 'Julio Reyes',
+            allowEnterKey: false,
+            allowEscapeKey: false,
+            allowOutsideClick: false,
         })
 
         let { value: compradorEmail } = await Swal.fire({
             title: 'Ingrese su correo electronico',
             input: 'email',
             inputLabel: 'Su Email',
-            inputPlaceholder: 'admin@jjrh92.dev'
+            inputPlaceholder: 'admin@jjrh92.dev',
+            allowEnterKey: false,
+            allowEscapeKey: false,
+            allowOutsideClick: false,
         })
 
         let { value: compradorTelefono } = await Swal.fire({
             title: 'Ingrese su telefono',
             input: 'tel',
             inputLabel: 'Su Telefono para la factura',
-            inputPlaceholder: '+56977777777'
+            inputPlaceholder: '+56977777777',
+            allowEnterKey: false,
+            allowEscapeKey: false,
+            allowOutsideClick: false,
         })
 
         const orderData = {
