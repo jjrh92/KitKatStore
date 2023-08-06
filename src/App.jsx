@@ -6,7 +6,6 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error404 from './components/404/404'
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
-import Checkout from './components/Checkout/Checkout'
 import Contacto from './components/Contacto/Contacto';
 import { CartContextProvider } from './Context'
 import './reset.css'
@@ -24,7 +23,6 @@ function App() {
           <Route path="/product/:id" element={<ItemDetailContainer/>} />
           <Route path="/contacto" element={<Contacto/>} />
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/Checkout" element={<Checkout/>} />
           <Route path="*" element={<Error404/>} />
         </Routes>      
         <Footer /> 
