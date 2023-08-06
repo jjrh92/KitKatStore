@@ -1,4 +1,7 @@
 import { useState, createContext } from "react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const AlertaDulce = withReactContent (Swal);
 const CartContext = createContext ({ cart: [] });
 
 function CartContextProvider (props) {
@@ -69,7 +72,20 @@ function CartContextProvider (props) {
 
   function clearCart () {
 
-    alert ("Tu carrito ha sido limpiado correctamente.");
+    AlertaDulce.fire ({
+      position: 'center',
+      icon: 'success',
+      title: 'Tu carrito ha sido limpiado correctamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    setCart ([]);
+  
+  }
+
+  function clearCartQuietly () {
+
     setCart ([]);
   
   }
@@ -133,7 +149,13 @@ function CartContextProvider (props) {
         })
     );
 
-    alert ("Se han eliminado del carrito los items solicitados.")
+    AlertaDulce.fire ({
+      position: 'center',
+      icon: 'success',
+      title: 'Se han eliminado del carrito los items solicitados',
+      showConfirmButton: false,
+      timer: 1500
+    })
 
   }
 
@@ -148,6 +170,7 @@ function CartContextProvider (props) {
         getTotalItemsInCart,
         getTotalPriceInCart,
         getItemTitleInCart,
+        clearCartQuietly,
       }}
     >
       {props.children}

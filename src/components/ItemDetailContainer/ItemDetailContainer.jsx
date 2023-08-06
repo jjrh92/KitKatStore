@@ -7,6 +7,8 @@ import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartChe
 import ItemCount from "../ItemListContainer/ItemCount/ItemCount";
 import { CartContext } from "../../Context";
 import Loader from "../ItemList/Loader";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ContenedorPadre = styled ("div") ({
 
@@ -50,6 +52,7 @@ const ImagenProducto = styled ("img") ({
 
 function ItemDetailContainer () {
 
+  const AlertaDulce = withReactContent (Swal);
   const [product, setProduct] = useState ({});
   const [isAddedToCart, setIsAddedToCart] = useState (false);
   const { id } = useParams();
@@ -97,7 +100,15 @@ function ItemDetailContainer () {
   function handleAddToCart (clickCount) {
 
     addToCart (product, clickCount);
-    alert (`Producto agregado al carrito, cantidad: ${clickCount}`);
+
+    AlertaDulce.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Producto agregado al carrito, cantidad: ${clickCount}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
     setIsAddedToCart (true);
 
   }
@@ -133,9 +144,7 @@ function ItemDetailContainer () {
           </ContenedorHijo>
   
           <TextoProducto>Stock Disponible: {product.stock} unidades.</TextoProducto>
-  
-          {/* <Link draggable="false" style={{fontSize: "30px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/cart"}>Ir al Carrito<ShoppingCartCheckoutRoundedIcon className="Cart"/></Link> */}
-  
+    
           <Link draggable="false" style={{fontSize: "20px", color: ColoresJulioFood.hover, textDecoration: "none", fontWeight: "bold", fontFamily: "KittyKatt", paddingBottom: "15px",}} to={"/"}>Volver al Home</Link>
   
       </ContenedorPadre>

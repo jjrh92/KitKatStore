@@ -7,6 +7,9 @@ import { IconButton } from "@mui/material";
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import { CartContext } from "../../Context";
+import { createOrder } from '../../services/firebase';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ContenedorPaginaCart = styled ("div") ({
 
@@ -53,9 +56,74 @@ const ImagenError = styled ("img") ({
 
 function Cart () {
 
+    const AlertaDulce = withReactContent (Swal);
     const context = useContext (CartContext);
-
     let ItemsEnCarrito = context.cart;  
+
+    const { cart, clearCartQuietly } = useContext (CartContext);
+
+    // 1. Creando nuestro objeto orden de compra
+  
+    async function handleCheckout () {
+
+        let { value: compradorNombre } = await Swal.fire({
+            title: 'Ingrese su nombre',
+            input: 'text',
+            inputLabel: 'Su Nombre para la factura',
+            inputPlaceholder: 'Julio Reyes'
+        })
+
+        let { value: compradorEmail } = await Swal.fire({
+            title: 'Ingrese su correo electronico',
+            input: 'email',
+            inputLabel: 'Su Email',
+            inputPlaceholder: 'admin@jjrh92.dev'
+        })
+
+        let { value: compradorTelefono } = await Swal.fire({
+            title: 'Ingrese su telefono',
+            input: 'tel',
+            inputLabel: 'Su Telefono para la factura',
+            inputPlaceholder: '+56977777777'
+        })
+
+        const orderData = {
+  
+            items: cart,
+            buyer: { name: compradorNombre, email: compradorEmail, phone: compradorTelefono },
+            date: new Date (),
+            total: context.getTotalPriceInCart(),
+        
+        }
+
+        const idOrder = await createOrder (orderData);
+
+        AlertaDulce.fire({
+
+            position: 'center',
+            icon: 'success',
+            iconColor: 'yellowgreen',
+            color: 'yellowgreen',
+            background: '#F7F0F0',
+            confirmButtonColor: 'yellowgreen',
+            title: `Estimado ${orderData.buyer.name}, tu numero de orden es ${idOrder} por un monto de $${orderData.total}usd.\nA tu correo electronico ${orderData.buyer.email} hemos enviado todos los detalles.\nGracias por tu compra y a tu telefono de contacto ${orderData.buyer.phone} te enviaremos el estado del despacho proximamente.\nQue tengas un feliz dia.`,
+            confirmButtonText: 'Entendido 🍫',
+            showConfirmButton: true,
+            allowEnterKey: true,
+            allowEscapeKey: false,
+            backdrop: `
+            rgba(0,0,123,0.4)
+            left top
+            no-repeat
+            `,
+            
+           
+        })
+
+        clearCartQuietly ();
+
+    }
+  
 
     function CalcularDelivery () {
 
@@ -75,18 +143,6 @@ function Cart () {
 
 
     }
-
-    function TerminarCompra () {
-
-        let cantidadItems = context.getTotalItemsInCart ();
-        let nombresItems = context.getItemTitleInCart ();
-
-        alert ("Despachamos a tu hogar: x"+cantidadItems+ " (" +nombresItems+").\nGracias por su compra.\nVuelva prontos.!");
-        window.location.href='/';
-
-    }
-
-
 
     if (context.getTotalItemsInCart() === 0) {
 
@@ -112,7 +168,7 @@ function Cart () {
 
                 <ContenedorButtons>
 
-                    <IconButton onClick={TerminarCompra} variant="text" sx={{color: "purple",}} title="Procesar Compra">
+                    <IconButton onClick={handleCheckout} variant="text" sx={{color: "purple",}} title="Procesar Compra">
                         <TextoCart sx={{color: "purple"}}>Procesar Compra:</TextoCart>
                         <LocalShippingIcon sx={{fontSize: "40px",}}/> 
                     </IconButton>

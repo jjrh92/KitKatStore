@@ -1,6 +1,6 @@
 // 1. Inicio Firestore
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, getDoc, where, query } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, doc, getDoc, where, query, addDoc } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyC3Zmzh5oSaGK8fgh_fWaRQqUUuhHHtEqc",
@@ -84,4 +84,32 @@ async function getCategoryData (id) {
 
 }
 
-export { getData, getProductData, getCategoryData };
+async function createOrder (orderData) {
+
+  const collectionRef = collection (db, "orders");
+  const docCreated = await addDoc (collectionRef, orderData);
+
+  return (docCreated.id)
+
+}
+
+async function getOrder (id) {
+
+  const docRef = doc (db, "orders", id);
+  const docSnapshot = await getDoc (docRef);
+
+  if (docSnapshot.exists ()) {
+
+    return {...docSnapshot.data(), id: docSnapshot.id};
+
+  }
+
+  else {
+
+    throw new Error ("No encontramos ese producto.");
+
+  }
+
+}
+
+export { getData, getOrder, getProductData, getCategoryData, createOrder };

@@ -4,6 +4,8 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { IconButton } from "@mui/material";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ContenedorBotones = styled ("div") ({
 
@@ -16,12 +18,18 @@ const ContenedorBotones = styled ("div") ({
 function ItemCount (props) {
 
   const [clickCount, setClickCount] = useState (1);
+  const AlertaDulce = withReactContent (Swal);
 
   function handleClickAdd () {
 
     if (clickCount === props.stock) {
 
-      alert ("Stock superado, Si deseas agregar más de "+ props.stock +" productos por favor contacta al admin.\nGracias.");
+      AlertaDulce.fire({
+        position: 'center',
+        icon: 'error',
+        title: `Stock superado, Si deseas agregar más de ${props.stock} productos por favor contacta al admin.\nGracias.`,
+        showConfirmButton: true,
+      })
 
     } 
     
