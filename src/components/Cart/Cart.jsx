@@ -72,6 +72,11 @@ function Cart () {
             allowEnterKey: false,
             allowEscapeKey: false,
             allowOutsideClick: false,
+            preConfirm: (compradorNombre) => {
+                if (!compradorNombre || compradorNombre.trim() === "") {
+                    Swal.showValidationMessage("El campo nombre no puede estar vacio.");
+                }
+            },
         })
 
         let { value: compradorEmail } = await Swal.fire({
@@ -92,6 +97,11 @@ function Cart () {
             allowEnterKey: false,
             allowEscapeKey: false,
             allowOutsideClick: false,
+            preConfirm: (compradorTelefono) => {
+                if (!compradorTelefono || compradorTelefono.trim() === "") {
+                    Swal.showValidationMessage("El campo telefono no puede estar vacio.");
+                }
+            },
         })
 
         const orderData = {
