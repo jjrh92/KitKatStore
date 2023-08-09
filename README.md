@@ -39,7 +39,7 @@ ReactJS E-commerce Project . - Proyecto E-commerce basado en ReactJS.
 Built With <img src="https://media0.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="30px"> Hecho Con
 </h1>
 
-ReactJS, SwiperJS, ReactFastMarquee, MaterialUI.
+ReactJS, SwiperJS, ReactFastMarquee, MaterialUI, SweetAlert2.
 
 <!-- GETTING STARTED -->
 <h1 align="center"> 
