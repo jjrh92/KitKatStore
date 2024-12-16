@@ -27,7 +27,7 @@ function ItemCount (props) {
       AlertaDulce.fire({
         position: 'center',
         icon: 'error',
-        title: `Stock superado, Si deseas agregar más de ${props.stock} productos por favor contacta al admin.\nGracias.`,
+        title: `Stock number surpassed, if you wish to add more of ${props.stock} units please contact the admin of this page.\nThank You.`,
         showConfirmButton: true,
       })
 
@@ -55,7 +55,7 @@ function ItemCount (props) {
   return (
 
     <ContenedorBotones>
-        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Sumar Cantidad" onClick={handleClickAdd}>
+        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Add Item Quantity" onClick={handleClickAdd}>
 
             <AddIcon />
 
@@ -64,7 +64,7 @@ function ItemCount (props) {
         <IconButton onClick={() => props.onConfirm(clickCount)} sx={{cursor:"unset", color: "#EC2227",}} title="Agregar al carrito">{clickCount}<AddShoppingCartIcon />
         </IconButton>
 
-        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Restar Cantidad" onClick={handleClickSub}>
+        <IconButton variant="text" sx={{cursor:"unset", color: "#EC2227",}} title="Substract Item Quantity" onClick={handleClickSub}>
 
             <RemoveIcon />
 

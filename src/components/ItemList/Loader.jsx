@@ -34,7 +34,7 @@ export default function Loader () {
 
     <Backdrop sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, display: "flex", flexDirection: "column",}} open={open} onClick={handleClose}>
 
-      <TextoLoader>...Cargando...</TextoLoader>
+      <TextoLoader>...Loading...</TextoLoader>
 
       <CircularProgress thickness={5} size={100} sx={{color: ColoresJulioFood.hover}} />
 

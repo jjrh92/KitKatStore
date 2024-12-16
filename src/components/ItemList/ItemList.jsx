@@ -41,7 +41,7 @@ const ItemList = (props) => {
     return (
 
         <ContenedorCategoria>
-            <H1Encabezado>Catalogo de Productos Disponibles - Precios en Dolares (USD).</H1Encabezado>
+            <H1Encabezado>Product Catalog - Prices are (USD).</H1Encabezado>
             <ContenedorProductos>
                 <ContenedorProductos>
                     {products.map ( (item) => <Item key={item.id} {...item} />) }
