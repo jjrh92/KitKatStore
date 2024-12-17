@@ -2,28 +2,28 @@
 
 <div align="center">
 
-![Github Contributors](https://img.shields.io/github/contributors/jjrh92/JulioFlix)
-![Github Stars](https://img.shields.io/github/stars/jjrh92/JulioFlix)
-![Github Issues](https://img.shields.io/github/issues-raw/jjrh92/JulioFlix)
+![Github Contributors](https://img.shields.io/github/contributors/jjrh92/KitKatStore)
+![Github Stars](https://img.shields.io/github/stars/jjrh92/KitKatStore)
+![Github Issues](https://img.shields.io/github/issues-raw/jjrh92/KitKatStore)
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jjrh92/JulioFood">
+  <a href="https://github.com/jjrh92/KitKatStore">
     <img src="https://salpimenta.com.ar/wp-content/uploads/2022/08/shutterstock_1960010986-800x533-1-696x464.jpg" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Welcome - Bienvenid@</h3>
 
   <p align=center">
-    JulioFood (KitKatScript) - KitKat selling website - Ecommerce de venta de KitKats
+    KitKatStore - KitKat selling website - Ecommerce de venta de KitKats
     <br />
     <br />
-    <a href="https://julio-food.vercel.app/">View Demo - Ver Demo</a>
+    <a href="https://kitkatstore.julioreyes.dev/">View Demo - Ver Demo</a>
     ·
-    <a href="https://github.com/jjrh92/JulioFood/issues">Report Bug - Reportar Bug</a>
+    <a href="https://github.com/jjrh92/KitKatStore/issues">Report Bug - Reportar Bug</a>
     ·
-    <a href="https://github.com/jjrh92/JulioFood/issues">Request Feature - Pedir Feature</a>
+    <a href="https://github.com/jjrh92/KitKatStore/issues">Request Feature - Pedir Feature</a>
   </p>
 </div>
 
@@ -33,7 +33,7 @@
 About The Project <img src="https://media2.giphy.com/media/4ZrRpqbSaWoyZYRoCd/giphy.gif" width="30px"> Acerca del Proyecto
 </h1>
 
-ReactJS E-commerce Project . - Proyecto E-commerce basado en ReactJS.
+ReactJS E-commerce Project. - Proyecto E-commerce basado en ReactJS.
 
 <h1 align="center"> 
 Built With <img src="https://media0.giphy.com/media/uhQuegHFqkVYuFMXMQ/giphy.gif" width="30px"> Hecho Con
@@ -50,7 +50,7 @@ Install the project locally - Instalar el proyecto localmente.
 
 Clone the repo and execute npm install from your vscode
    ```sh
-   git clone https://github.com/jjrh92/JulioFood.git
+   git clone https://github.com/jjrh92/KitKatStore.git
    ```
 
 Or just simply click on the Demo link above - O simplemente clicka en el link de Demo de arriba. 
@@ -83,7 +83,7 @@ Contact <img src="https://media3.giphy.com/media/dA9zmG7BCtbauczAQY/giphy.gif" w
 
 [Via Github](https://github.com/jjrh92)
 
-[Via E-Mail](mailto:admin@jjrh92.dev)
+[Via E-Mail](mailto:contact@julioreyes.dev)
 
 [Via Telegram](https://t.me/jjrh92)
 
