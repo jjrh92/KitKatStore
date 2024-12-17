@@ -54,16 +54,16 @@ function Cart() {
 
   async function handleCheckout() {
     let { value: compradorNombre } = await Swal.fire({
-      title: "Ingrese su nombre",
+      title: "Enter your name ",
       input: "text",
-      inputLabel: "Su Nombre para la factura",
-      inputPlaceholder: "Julio Reyes",
+      inputLabel: "Billing data",
+      inputPlaceholder: "John Smith",
       allowEnterKey: false,
       allowEscapeKey: false,
       allowOutsideClick: false,
       preConfirm: (compradorNombre) => {
         if (!compradorNombre || compradorNombre.trim() === "") {
-          Swal.showValidationMessage("El campo nombre no puede estar vacio.");
+          Swal.showValidationMessage("Name cannot be empty.");
         }
       },
     });
@@ -71,7 +71,7 @@ function Cart() {
     let { value: compradorEmail } = await Swal.fire({
       title: "Enter your email address",
       input: "email",
-      inputLabel: "Su Email",
+      inputLabel: "Email",
       inputPlaceholder: "youremail@hotmail.com",
       allowEnterKey: false,
       allowEscapeKey: false,
@@ -113,7 +113,7 @@ function Cart() {
       color: "yellowgreen",
       background: "#F7F0F0",
       confirmButtonColor: "yellowgreen",
-      title: `Dear ${orderData.buyer.name}, your order number is ${idOrder} for an ammount of $${orderData.total}usd.\nTo your email ${orderData.buyer.email} We have sent all the details.\nThank you for your purchase and to your phone ${orderData.buyer.phone} we'll send shipping status updates very soon.\nHave a nice day.`,
+      title: `Dear ${orderData.buyer.name}, your order number is ${idOrder} for an ammount of $${orderData.total}usd.\nTo your email ${orderData.buyer.email} we have sent all the details.\nThank you for your purchase and to your phone ${orderData.buyer.phone} we'll send shipping status updates very soon.\nHave a nice day.`,
       confirmButtonText: "Ok 🍫",
       showConfirmButton: true,
       allowEnterKey: true,
