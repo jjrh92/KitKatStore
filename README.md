@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/jjrh92/KitKatStore">
-    <img src="https://salpimenta.com.ar/wp-content/uploads/2022/08/shutterstock_1960010986-800x533-1-696x464.jpg" alt="Logo" width="200" height="200">
+    <img src="https://i.pinimg.com/originals/78/ea/76/78ea76dd5a9851e0c36762f28d3321c1.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Welcome - Bienvenid@</h3>
